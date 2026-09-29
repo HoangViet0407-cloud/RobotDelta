@@ -8,6 +8,7 @@ function p = RobotDelta_Traj(t, Traj)
 %             3: di lan luot qua cac diem Traj.wp (Nx3): moi doan Traj.wp_T [s],
 %                dung Traj.wp_dwell [s] tai moi diem (bat dau tu Traj.home)
 
+t = max(t, 0);                                           % truoc t = 0: dung yen o home
 r = min(t/Traj.t_ramp, 1); r = r^3*(10 - 15*r + 6*r^2);  % tang dan 0 -> 1, van toc & gia toc = 0 o 2 dau
 switch Traj.mode
     case 1

@@ -24,7 +24,6 @@ Traj.wp_T     = 1.0;                     % [s] mode 3: thoi gian di moi doan
 Traj.wp_dwell = 0.5;                     % [s] mode 3: thoi gian dung tai moi diem
 
 % --- Dong co & driver ---
-Motor.tau_filter = 0.005;   % [s] (mo phong) hang so loc goc dat bac 2 truoc khop dong co
 Motor.steps_rev  = 200;     % buoc / vong cua dong co (1.8 deg/buoc)
 Motor.microstep  = 16;      % vi buoc cai tren driver
 Motor.gear       = 1;       % ti so truyen dong co -> canh tay (1 = noi truc tiep)

@@ -95,8 +95,12 @@ for i=1:3
     blk = @(lib,name,varargin) add_block(lib,sprintf('%s/%s_%d',m,name,i),'Position',varargin{:});
     hG  = blk('simulink/Math Operations/Gain','cmd_gain',[x-330 y-60 x-290 y-30], 'Gain',sprintf('G.s(%d)',i));
     hB  = blk('simulink/Math Operations/Bias','cmd_bias',[x-260 y-60 x-220 y-30], 'Bias',sprintf('G.q0(%d)-G.s(%d)*G.th0(%d)',i,i,i));
-    hSP = blk('nesl_utility/Simulink-PS Converter','SPS',[x-180 y-60 x-150 y-30], 'Unit','deg', ...
-        'FilteringAndDerivatives','filter','SimscapeFilterOrder','2','InputFilterTimeConstant','Motor.tau_filter');
+    % van toc, gia toc goc tay -> khop: chi nhan chieu quay s (bias q0 - s*th0 bien mat khi dao ham)
+    hGd  = blk('simulink/Math Operations/Gain','cmd_dgain', [x-330 y-10 x-290 y+20], 'Gain',sprintf('G.s(%d)',i));
+    hGdd = blk('simulink/Math Operations/Gain','cmd_ddgain',[x-330 y+40 x-290 y+70], 'Gain',sprintf('G.s(%d)',i));
+    % SPS nhan goc + 2 dao ham tinh chinh xac (RobotDelta_IKd) -> khong tre nhu che do loc
+    hSP = blk('nesl_utility/Simulink-PS Converter','SPS',[x-180 y-60 x-150 y+70], 'Unit','deg', ...
+        'FilteringAndDerivatives','provide','UdotUserProvided','2');   % 2 = cap ca dao ham bac 1 va bac 2
     hPq = blk('nesl_utility/PS-Simulink Converter','PSq',[x+120 y-60 x+150 y-30],'Unit','deg');
     hPt = blk('nesl_utility/PS-Simulink Converter','PSt',[x+120 y+40 x+150 y+70],'Unit','N*m');
     hB2 = blk('simulink/Math Operations/Bias','meas_bias',[x+180 y-60 x+220 y-30],'Bias',sprintf('-G.q0(%d)',i));
@@ -104,8 +108,11 @@ for i=1:3
     hB3 = blk('simulink/Math Operations/Bias','meas_th',  [x+320 y-60 x+360 y-30],'Bias',sprintf('G.th0(%d)',i));
     jp = get_param(J,'PortHandles');
     L = @(a,b) add_line(m,a,b,'autorouting','on');
-    L(ph1(hG,'Out'),ph1(hB,'In')); L(ph1(hB,'Out'),ph1(hSP,'In'));
-    sp = get_param(hSP,'PortHandles'); L(sp.RConn(1), jp.LConn(2));
+    sp = get_param(hSP,'PortHandles');
+    assert(numel(sp.Inport) == 3, 'SPS can 3 cong vao (goc, van toc, gia toc)');
+    L(ph1(hG,'Out'),ph1(hB,'In')); L(ph1(hB,'Out'),sp.Inport(1));
+    L(ph1(hGd,'Out'),sp.Inport(2)); L(ph1(hGdd,'Out'),sp.Inport(3));
+    L(sp.RConn(1), jp.LConn(2));
     pq = get_param(hPq,'PortHandles'); pt = get_param(hPt,'PortHandles');
     L(jp.RConn(2), pq.LConn(1)); L(jp.RConn(3), pt.LConn(1));
     L(pq.Outport(1),ph1(hB2,'In')); L(ph1(hB2,'Out'),ph1(hG2,'In')); L(ph1(hG2,'Out'),ph1(hB3,'In'));
@@ -147,7 +154,7 @@ for i=1:3
     names = [strcat(legs{i},'_RIGID'), strcat('Lock_',legLocks{i}), ...
              {sprintf('Cau_Tay_%d',2*i-1),sprintf('Cau_Tay_%d',2*i),sprintf('Cau_Ban_%d',2*i-1),sprintf('Cau_Ban_%d',2*i), ...
               sprintf('Khop_DongCo_%d',i)}, ...
-             strcat({'cmd_gain_','cmd_bias_','SPS_','PSq_','PSt_','meas_bias_','meas_gain_','meas_th_'}, num2str(i))];
+             strcat({'cmd_gain_','cmd_bias_','cmd_dgain_','cmd_ddgain_','SPS_','PSq_','PSt_','meas_bias_','meas_gain_','meas_th_'}, num2str(i))];
     group(m, names, sprintf('Chan_%d',i), [450 80+230*(i-1) 600 250+230*(i-1)]);
 end
 group(m, {'Ga_DinhMat_1_RIGID','Khung_1_RIGID','Ga_Hybrid_1_RIGID','Ga_Hybrid_2_RIGID','Ga_Hybrid2_1_RIGID'}, 'De', [250 250 350 450]);
@@ -160,9 +167,13 @@ end
 renamePorts(m);
 
 % dat ten cho dau vao/ra cua plant va gom thanh Robot_Delta
-hDm = add_block('simulink/Signal Routing/Demux',[m '/Demux_cmd'],'Outputs','3','Position',[330 100 335 700]);
-hIn = add_block('simulink/Sources/Constant',[m '/tmp_in'],'Value','[0;0;0]','Position',[250 385 280 415]);
-add_line(m, ph1(hIn,'Out'), ph1(hDm,'In'));
+dmx = {'Demux_cmd','Demux_dcmd','Demux_ddcmd'}; inN = {'theta_dat','dtheta_dat','ddtheta_dat'};
+tmpIn = {'tmp_in','tmp_in2','tmp_in3'};
+for k = 1:3
+    hD = add_block('simulink/Signal Routing/Demux',[m '/' dmx{k}],'Outputs','3','Position',[310+30*k 100 315+30*k 700]);
+    hI = add_block('simulink/Sources/Constant',[m '/' tmpIn{k}],'Value','[0;0;0]','Position',[250 285+100*k 280 315+100*k]);
+    add_line(m, ph1(hI,'Out'), ph1(hD,'In'));
+end
 muxes = {'Mux_theta','Mux_torque','Mux_tcp'}; tmps = {};
 for k=1:3
     h = add_block('simulink/Signal Routing/Mux',[m '/' muxes{k}],'Inputs','3','Position',[1000 100+250*(k-1) 1005 300+250*(k-1)]);
@@ -171,19 +182,22 @@ for k=1:3
 end
 for i=1:3
     cp = get_param([m '/Chan_' num2str(i)],'PortHandles');
-    add_line(m, dm(hDm,i), portByName(m,['Chan_' num2str(i)],'Inport','theta_dat'),'autorouting','on');
+    for k = 1:3
+        add_line(m, dm([m '/' dmx{k}],i), portByName(m,['Chan_' num2str(i)],'Inport',inN{k}),'autorouting','on');
+    end
     add_line(m, portByName(m,['Chan_' num2str(i)],'Outport','theta_do'), mx(m,'Mux_theta',i),'autorouting','on');
     add_line(m, portByName(m,['Chan_' num2str(i)],'Outport','momen'),   mx(m,'Mux_torque',i),'autorouting','on');
     add_line(m, ph1([m '/PS_tcp_' xyzN{i}],'Out'), mx(m,'Mux_tcp',i),'autorouting','on');
 end
 set_param([m '/Solver' newline 'Configuration'],'Name','Solver_Configuration');
 all = find_system(m,'SearchDepth',1,'Type','block');
-all = setdiff(all, {[m '/tmp_in'],[m '/tmp_out1'],[m '/tmp_out2'],[m '/tmp_out3']});
+tmpAll = [tmpIn, {'tmp_out1','tmp_out2','tmp_out3'}];
+all = setdiff(all, strcat([m '/'], tmpAll));
 group(m, strrep(all, [m '/'], ''), 'Robot_Delta', [520 120 720 360]);
 P = [m '/Robot_Delta'];
-renameIO(P, 'Inport',  {'Demux_cmd'}, {'theta_dat'});
+renameIO(P, 'Inport',  dmx, inN);
 renameIO(P, 'Outport', muxes, {'theta_do','momen','tcp'});
-for b = {'tmp_in','tmp_out1','tmp_out2','tmp_out3'}
+for b = tmpAll
     lh = get_param([m '/' b{1}],'LineHandles'); lh = [lh.Inport lh.Outport]; delete_line(lh(lh>0)); delete_block([m '/' b{1}]);
 end
 pruneUnconnected(P); tryArrange(P);
@@ -191,12 +205,16 @@ pruneUnconnected(P); tryArrange(P);
 %% 9. tang tren: Quy dao -> IK -> Robot -> Scope
 hC  = add_block('simulink/Sources/Clock',[m '/Clock'],'Position',[40 225 60 245]);
 hTr = addMatlabFcn([m '/Quy_Dao'], [120 200 260 270], trajCode(), 'Traj');
-hIK = addMatlabFcn([m '/IK'],      [320 200 440 270], ...
-    sprintf('function theta_dat = IK(xyz, G)\n%% Dong hoc nguoc: TCP [m] -> goc canh tay [deg] (xem lib/RobotDelta_IK.m)\ntheta_dat = RobotDelta_IK(xyz, G);\n'), 'G');
+hIK = addMatlabFcn([m '/IK'],      [320 190 460 290], sprintf([ ...
+    'function [theta_dat, dtheta_dat, ddtheta_dat] = IK(t, G, Traj)\n' ...
+    '%% Dong hoc nguoc: goc tay [deg] + van toc [deg/s] + gia toc [deg/s^2] chinh xac tren quy dao\n' ...
+    '%% (sai phan trung tam cua IK, xem lib/RobotDelta_IKd.m) -> 3 cong cua khoi SPS, khong tre\n' ...
+    '[theta_dat, dtheta_dat, ddtheta_dat] = RobotDelta_IKd(t, Traj, G);\n']), {'G','Traj'});
 set_param(P,'Position',[520 180 700 290]);
 add_line(m, ph1(hC,'Out'), ph1(hTr,'In'));
-add_line(m, ph1(hTr,'Out'), ph1(hIK,'In'));
-add_line(m, ph1(hIK,'Out'), ph1(P,'In'));
+add_line(m, ph1(hC,'Out'), ph1(hIK,'In'));
+ikp = get_param(hIK,'PortHandles');
+for k = 1:3, add_line(m, ikp.Outport(k), portByName(m,'Robot_Delta','Inport',inN{k}), 'autorouting','on'); end
 Pp = get_param(P,'PortHandles');
 sc = @(name,n,pos) add_block('simulink/Sinks/Scope',[m '/' name],'NumInputPorts',num2str(n),'Position',pos);
 hS1 = sc('Scope_Goc',   2,[900 60 940 120]);
@@ -409,7 +427,9 @@ function h = addMatlabFcn(path, pos, code, param)
 h = add_block('simulink/User-Defined Functions/MATLAB Function', path, 'Position', pos);
 rt = sfroot; ch = rt.find('-isa','Stateflow.EMChart','Path',path);
 ch.Script = code;
-d = ch.find('-isa','Stateflow.Data','Name',param); d.Scope = 'Parameter';
+for p = cellstr(param)                 % tham so lay tu workspace (G, Traj...), khong phai cong vao
+    d = ch.find('-isa','Stateflow.Data','Name',p{1}); d.Scope = 'Parameter';
+end
 end
 
 function group(m, names, newName, pos)
@@ -464,7 +484,11 @@ for s = {'Chan_1','Chan_2','Chan_3','De','Ban_Dong'}
         set_param(pm{k},'Name',[nm '_' num2str(k)]);
     end
     ip = find_system(S,'SearchDepth',1,'BlockType','Inport');
-    for k=1:numel(ip), set_param(ip{k},'Name','theta_dat'); end
+    for k=1:numel(ip)
+        n = peerNames1(ip{k});
+        if contains(n,'cmd_ddgain'), nm = 'ddtheta_dat'; elseif contains(n,'cmd_dgain'), nm = 'dtheta_dat'; else, nm = 'theta_dat'; end
+        set_param(ip{k},'Name',nm);
+    end
     op = find_system(S,'SearchDepth',1,'BlockType','Outport');
     for k=1:numel(op)
         n = peerNames1(op{k});

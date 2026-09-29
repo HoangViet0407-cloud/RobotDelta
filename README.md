@@ -168,7 +168,7 @@ Firmware cần có:
 
 Giao thức đã được thử với một vi điều khiển giả lập (có cả trường hợp bộ đệm đầy), **nhưng chưa thử với phần cứng thật**.
 
-## Kết quả E0 hiện tại (2026-09-28, `data/20260928_225427_precheck_nguye`)
+## Kết quả E0 hiện tại (2026-09-29, `data/20260929_234800_precheck_nguye`)
 
 | Hạng mục | Kết quả | Ý nghĩa |
 |---|---|---|
@@ -179,6 +179,7 @@ Giao thức đã được thử với một vi điều khiển giả lập (có 
 | Độ phân giải (nối trực tiếp, 1/16 vi bước) | **0.51–0.55 mm** TCP mỗi vi bước, 8–9 mm mỗi bước đủ | Thô; nên thêm hộp số / đai 1:3–1:10 |
 | Mô-men cần (mô phỏng, thanh nhôm) | Giữ tĩnh 0.45–0.51 N·m; tròn R60/2 s: 0.60 N·m; gắp–đặt 2 s: 0.67 N·m (thép: 0.85 / 1.02 / 1.13) | Giảm khoảng 40%, nhưng vẫn ngang hoặc vượt mô-men giữ NEMA17 (~0.4–0.6 N·m) → vẫn nên có hộp số hoặc động cơ lớn hơn |
 | Tần số xung | < 500 Hz | Arduino/STM32 đều đáp ứng dễ |
+| Lệnh động cơ trong mô phỏng | Khối IK xuất θ, θ̇, θ̈ tính chính xác (`RobotDelta_IKd`, sai phân trung tâm h = 10⁻⁴ s); SPS ở chế độ 3 cổng (*Provide signal and derivatives*) | Sai số bám TCP 0.000 mm (chế độ lọc 5 ms cũ: 1.89 mm do trễ); mô-men không đổi |
 | Khung | **Đã sửa (2026-09-28):** `Khung.SLDPRT` cũ là phiên bản khác (trọng tâm cao hơn 68.2 mm) nên tấm đế trông như tụt xuống. Model giờ dùng `Khung.STEP` xuất từ cụm lắp, `rd_checkgeom` báo lệch 0.1 mm | Không cần làm gì thêm; có thể xóa `Khung.SLDPRT` cũ. Khung gắn cứng với đất nên các kết quả động lực học không đổi |
 
 ## Khi sửa CAD

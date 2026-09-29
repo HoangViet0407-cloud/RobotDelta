@@ -16,3 +16,6 @@ slprj/
 # (Local.dataDir trong local/RobotDelta_Local.m), hoac dua ket qua quan trong len bang:
 #   git add -f data/<thu muc>
 data/
+
+# ---- File tam cua Word / Office khi dang mo file ----
+~$*

@@ -1,4 +1,4 @@
-%% RobotDelta_Geometry.m -- TU SINH boi build_RobotDelta_Sim.m (2026-09-28 22:53). KHONG sua tay.
+%% RobotDelta_Geometry.m -- TU SINH boi build_RobotDelta_Sim.m (2026-09-29 23:45). KHONG sua tay.
 % Hinh hoc dong hoc do tu CAD, don vi m / deg. Moi hang = 1 chan.
 % He toa do robot: goc = tam de, o cao do truc dong co, z huong len (truc song song World).
 G.origin     = [-0.008 0.06385640646 0.0385];  % goc he toa do robot, tinh trong he World cua CAD
