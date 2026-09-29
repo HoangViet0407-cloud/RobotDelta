@@ -1,0 +1,31 @@
+# File nhi phan: Git khong so sanh / tron theo dong.
+# merge=mlAutoMerge: dung cong cu tron model cua MATLAB (neu da cau hinh, xem tai lieu MathWorks).
+*.slx    binary merge=mlAutoMerge
+*.mdl    binary merge=mlAutoMerge
+*.slxc   binary
+*.sldd   binary
+*.mat    binary
+*.mlx    binary
+*.mlapp  binary
+*.mlproj binary
+*.fig    binary
+*.p      binary
+
+# CAD
+*.STEP   binary
+*.step   binary
+*.stp    binary
+*.SLDPRT binary
+*.SLDASM binary
+
+# Anh, tai lieu
+*.png    binary
+*.jpg    binary
+*.pdf    binary
+*.docx   binary
+*.xlsx   binary
+
+# Van ban
+*.m      text
+*.md     text
+*.csv    text

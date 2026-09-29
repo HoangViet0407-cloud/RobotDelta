@@ -1,0 +1,18 @@
+# ---- Cai dat rieng tung may (moi nguoi 1 ban, tu tao khi mo project) ----
+local/
+
+# ---- File tam / cache cua MATLAB & Simulink (tu sinh lai) ----
+work/
+slprj/
+*.slxc
+*.asv
+*.autosave
+*.slx.r20*
+*.mdl.r20*
+*.mlproj
+
+# ---- Ket qua thi nghiem ----
+# Mac dinh KHONG dua len Git (file .mat co the lon). Chia se bang thu muc dong bo
+# (Local.dataDir trong local/RobotDelta_Local.m), hoac dua ket qua quan trong len bang:
+#   git add -f data/<thu muc>
+data/

@@ -1,0 +1,2611 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="09/26/26||14:48:52" using="Simscape Multibody Link Version 7.4" from="SolidWorks 33.4.1"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="d?ng l?i cõ khí" uid="d?ng l?i cõ khí" version="6801">
+<AssemblyFile name="d?ng l?i cõ khí.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Bimattrau_M6 V2-6" uid="Bimattrau_M6 V2-6" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>0.45658904640034859 0.75444565602842184 -0.47152751224829353 0.47972373599486501 0.23757363585639632 0.84464424740188782 0.74926068883289842 -0.61185825126888393 -0.25345196886951571</Rotation>
+<Translation>-0.013609816604040592 -0.060662041559476923 -0.39305063069217661</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-8" uid="Bimattrau_M6 V2-8" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>0.12720014361612805 0.1292027450473042 0.98342603897612824 -0.31671892558458681 -0.93428445778288916 0.16371216852108864 0.93995172516495828 -0.33229384980401572 -0.077920162614338373</Rotation>
+<Translation>-0.090592745746206127 -0.076199235274634264 -0.39257709911770255</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-2" uid="Bimattrau_M6 V2-2" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>-0.12185734338413579 -0.058979046164611276 -0.99079375249184598 0.31667871702903261 -0.94837131190323876 0.017505568821824566 -0.94067283262790513 -0.31163011226844306 0.13424341728126193</Rotation>
+<Translation>0.023009999999991239 -0.19472654239078027 -0.040814265250597559</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-10" uid="Bimattrau_M6 V2-10" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>-0.45658904640034847 -0.74415322497788949 -0.48760888062280705 -0.47972373599486406 -0.25564448669524237 0.83935155539586392 -0.74926068883289909 0.61715628018949342 -0.24026349284133247</Rotation>
+<Translation>0.15726178517559009 0.11886737078056586 -0.11265105680679759</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-4" uid="bi_mattrauM6 V2-4" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>0.0055493939821984048 0.0073968632518768337 0.99995724440621125 0.82440444567513294 0.565933341413833 -0.0087614512068918005 -0.56597395185424149 0.824417818518139 -0.0029574198697310066</Rotation>
+<Translation>-0.025268532915513859 -0.19472654239078122 -0.0408142652505969</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-3" uid="bi_mattrauM6 V2-3" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>-0.0055493939821965417 -0.0073968632518770826 -0.99995724440621125 0.78567915856490333 -0.61863415131728028 0.00021591825747094631 -0.61860929836462664 -0.7856443681704729 0.0092446059322558206</Rotation>
+<Translation>0.023009999999990871 -0.19472654239078183 -0.040814265250591182</Translation>
+</Transform>
+</Instance>
+<Instance name="ThanhTruyen_450mm-1" uid="ThanhTruyen_450mm-1" entityUid="ThanhTruyen_450mm*:*Default">
+<Transform>
+<Rotation>0.35183298532508234 0.92809715994641473 0.12185734338413695 -0.87241333130052134 0.37230306142976166 -0.3166787170290325 -0.33927647988973131 0.0051080475160550365 0.94067283262790491</Rotation>
+<Translation>0.00020835854930694592 -0.13547041255709902 -0.21683061400984871</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-4" uid="Bimattrau_M6 V2-4" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>-0.2273352964617468 -0.87825855939806652 -0.42069058205132548 0.50336094912247598 0.26383698636487996 -0.82281091359097713 0.83363446298792732 -0.39881317364140756 0.38210160252071512</Rotation>
+<Translation>-0.065560424102734244 -0.0017642525201916545 -0.39348054556752676</Translation>
+</Transform>
+</Instance>
+<Instance name="ThanhTruyen_450mm-2" uid="ThanhTruyen_450mm-2" entityUid="ThanhTruyen_450mm*:*Default">
+<Transform>
+<Rotation>-0.45257572520549194 0.8826071246136411 0.12720014361612833 -0.86178443439183128 -0.39625334171019566 -0.31671892558458647 -0.2291348982470261 -0.25295840125353325 0.93995172516495851</Rotation>
+<Translation>-0.066791372873103466 -0.13546288883270868 -0.21669568218414989</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-5" uid="Bimattrau_M6 V2-5" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>0.45923237253458382 -0.75714797668197975 0.46457784000384855 0.47508457141794364 -0.23256954386588558 -0.84864954914655022 0.75059994538827812 0.61044110991347744 0.2529058585931046</Rotation>
+<Translation>-0.047599041759882457 -0.0017682271542654969 -0.39355182736917721</Translation>
+</Transform>
+</Instance>
+<Instance name="Assem1-1" uid="Assem1-1" entityUid="Assem1" rigid="true">
+<Transform>
+<Rotation>-0.99999210065910515 -0.00017840575965821738 0.0039707418418821585 0.0002212860115769186 -0.99994164047505518 0.010801234955156882 0.0039685831087471661 0.01080202830214508 0.99993378107386111</Rotation>
+<Translation>-0.10791578983723576 -0.041775872467216243 -0.41642571986140031</Translation>
+</Transform>
+<Instance name="bi_mattrauM6 V2-4" uid="bi_mattrauM6 V2-4" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>0.053130513381998173 -0.86084011007377814 0.50609431278757788 0.024267027984357308 -0.50554743125959389 -0.86245748074883799 0.99829267246663267 0.0581042135734708 -0.00596996352055506</Rotation>
+<Translation>-0.094216641539166174 0.019120740550384811 0.023544012020010996</Translation>
+</Transform>
+</Instance>
+<Instance name="GA_RAC_HUT-1" uid="GA_RAC_HUT-1" entityUid="GA_RAC_HUT*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.051235879425632902 0.0046758768217141852 0.019544012020010992</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-1" uid="bi_mattrauM6 V2-1" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>0.047581119399800219 -0.86823697332565941 -0.49386293161864286 -0.033878860312740927 0.49273568829069686 -0.86951927195928391 0.99829267246663289 0.058104213573470759 -0.0059699635205545942</Rotation>
+<Translation>-0.0082551173120996996 0.019120740550384853 0.023544012020010996</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-2" uid="bi_mattrauM6 V2-2" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>-0.047581119399800052 0.86823697332565952 0.49386293161864264 0.033878860312741114 -0.49273568829069669 0.86951927195928402 0.99829267246663278 0.058104213573470717 -0.0059699635205548492</Rotation>
+<Translation>-0.042255117312100021 -0.039768986906956814 0.023544012020010996</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-3" uid="bi_mattrauM6 V2-3" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>-0.053130513381998631 0.86084011007377781 -0.50609431278757833 -0.024267027984356492 0.50554743125959445 0.86245748074883788 0.99829267246663289 0.05810421357347078 -0.0059699635205560236</Rotation>
+<Translation>-0.060216641539165804 -0.039768986906956807 0.023544012020010996</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-6" uid="bi_mattrauM6 V2-6" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>-0.0055493939821980153 -0.0073968632518809424 -0.99995724440621125 -0.058145888297098131 0.99828311955028137 -0.0070617912104454878 0.99829267246663245 0.05810421357347078 -0.0059699635205549707</Rotation>
+<Translation>-0.017235879425632913 0.03467587682171417 0.023544012020010996</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-5" uid="bi_mattrauM6 V2-5" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>0.0055493939821979355 0.0073968632518810326 0.99995724440621114 0.058145888297098117 -0.99828311955028148 0.0070617912104455824 0.99829267246663245 0.0581042135734708 -0.0059699635205549013</Rotation>
+<Translation>-0.085235879425632918 0.034675876821714184 0.023544012020011051</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Bimattrau_M6 V2-7" uid="Bimattrau_M6 V2-7" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>0.12185734338413656 0.065551722466323847 -0.99038061347396045 -0.31667871702903266 0.94823428564904799 0.023797682670496131 0.9406728326279048 0.31073253965643483 0.13630814632462612</Rotation>
+<Translation>-0.02259328290136256 -0.076214282723417959 -0.39284696276910225</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-9" uid="Bimattrau_M6 V2-9" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>-0.22463582236399304 -0.58271290962557976 -0.78101498850312934 0.50795990514384448 0.61396209787578482 -0.60417487297819794 0.8315740989696041 -0.53244361891908898 0.15807691354285378</Rotation>
+<Translation>-0.099570661791725135 -0.060643019476635203 -0.39270948523912375</Translation>
+</Transform>
+</Instance>
+<Instance name="TrucRenM6-2" uid="TrucRenM6-2" entityUid="TrucRenM6*:*Default">
+<Transform>
+<Rotation>0.72550420047104713 -0.50000000000001699 0.47290977479731755 0.41887004544018297 0.86602540378442894 0.27303458578164819 -0.54606917156327905 7.9379728887146988e-16 0.83774009088033641</Rotation>
+<Translation>0.15076178517559485 0.13012570102975105 -0.11265105680679938</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-6" uid="bi_mattrauM6 V2-6" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>-0.75138757482593976 -0.43904240003686318 -0.49260377928621657 -0.42740593037259444 -0.24494008586769125 0.87024624389736094 -0.50273341154087781 0.86443399129430309 -0.0036043883629903527</Rotation>
+<Translation>0.15726178517559508 0.1188673707805534 -0.11265105680679943</Translation>
+</Transform>
+</Instance>
+<Instance name="ThanhTruyen_450mm-4" uid="ThanhTruyen_450mm-4" entityUid="ThanhTruyen_450mm*:*Default">
+<Transform>
+<Rotation>0.74206417473627384 0.48830972608502304 0.45923237253458388 -0.66964992225328879 0.57084466505941289 0.47508457141794352 -0.030161932947627534 -0.66006816298316995 0.75059994538827812</Rotation>
+<Translation>0.038331371707855139 0.087128410138032047 -0.2531014420879853</Translation>
+</Transform>
+</Instance>
+<Instance name="ThanhTruyen_450mm-3" uid="ThanhTruyen_450mm-3" entityUid="ThanhTruyen_450mm*:*Default">
+<Transform>
+<Rotation>0.87751693390536789 -0.14659629400685142 0.4565890464003477 -0.10406410163969318 0.87122660649974015 0.47972373599486462 -0.46811824730429563 -0.46848023086401824 0.7492606888328992</Rotation>
+<Translation>0.071825984285779326 0.029102664610537392 -0.25285084374948547</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-15" uid="Bimattrau_M6 V2-15" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>0.22733529646174694 0.86913048090967449 -0.43923896700585163 -0.50336094912247653 -0.28124370333786758 -0.81702492876981503 -0.83363446298792709 0.40683434772216515 0.3735497231056546</Rotation>
+<Translation>-0.15063724877410228 0.18661103227464917 -0.081505352311235707</Translation>
+</Transform>
+</Instance>
+<Instance name="ThanhTruyen_450mm-5" uid="ThanhTruyen_450mm-5" entityUid="ThanhTruyen_450mm*:*Default">
+<Transform>
+<Rotation>0.72741028669234142 0.64745110842195286 -0.22733529646174683 -0.48137695849319728 0.71756810041302543 0.50336094912247686 0.4890301612845615 -0.25671595874200492 0.83363446298792665</Rotation>
+<Translation>-0.10809883643842932 0.092423389877218723 -0.23749294893937814</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-11" uid="bi_mattrauM6 V2-11" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>0.12302294432344157 -0.86051996765576055 -0.49433869000485908 -0.077435218240556811 0.48828027298983362 -0.86924459272693255 0.98937815932333406 0.14521625347977532 -0.0065648746575175526</Rotation>
+<Translation>-0.15063724877411189 0.18661103227464382 -0.08150535231122219</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-10" uid="bi_mattrauM6 V2-10" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>-0.86320246613150509 -0.0040412809238615744 0.50484172818120154 -0.50477806440512119 -0.010874396608526174 -0.86318066080851219 0.0089782047151478195 -0.99993270550917324 0.0073468560077076823</Rotation>
+<Translation>0.12426178517559378 0.17602504743032579 -0.11265105680679924</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-14" uid="Bimattrau_M6 V2-14" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>-0.4592323725345841 0.63522773653012665 0.62096002347902313 -0.47508457141794314 0.41502966826274862 -0.77591560395595982 -0.75059994538827812 -0.65133409031350786 0.11119183773366192</Rotation>
+<Translation>0.12426178517560188 0.17602504743032404 -0.11265105680679516</Translation>
+</Transform>
+</Instance>
+<Instance name="Khung-1" uid="Khung-1" entityUid="Khung*:*Default&lt;As Machined&gt;">
+<Transform>
+<Rotation>-0.99999999999999989 2.2455688888628683e-16 0 0 -1.5355953131787474e-16 0.99999999999999989 2.2455688888628678e-16 1 1.5355953131787469e-16</Rotation>
+<Translation>0.31400000000000017 -0.31399999999999995 -0.58999999999999997</Translation>
+</Transform>
+</Instance>
+<Instance name="ThanhTruyen_450mm-6" uid="ThanhTruyen_450mm-6" entityUid="ThanhTruyen_450mm*:*Default">
+<Transform>
+<Rotation>0.94787475669825483 -0.2259915771109105 -0.2246358223639926 0.31182185184657624 0.8029594432331113 0.50795990514384493 0.065578794783038019 -0.55152872962130928 0.8315740989696041</Rotation>
+<Translation>-0.14160395528291714 0.034405168074119211 -0.2371074187751786</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-16" uid="Bimattrau_M6 V2-16" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>0.22463582236399321 -0.86474704130679403 0.4491673428266999 -0.50795990514384526 0.28944907308542883 0.81129277628747676 -0.83157409896960366 -0.41040442083526818 -0.3742361945105791</Rotation>
+<Translation>-0.18363724877410459 0.12945335562487736 -0.081505352311234791</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-12" uid="bi_mattrauM6 V2-12" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>-0.86199257520251582 0.050149623001671813 0.50443415388782442 0.504079533551549 -0.020412736360504179 0.86341597393650849 0.053596866981083346 0.99853309184376393 -0.0076837713881477317</Rotation>
+<Translation>-0.18363724877411189 0.12945335562487054 -0.081505352311221871</Translation>
+</Transform>
+</Instance>
+<Instance name="Hybrid_Motor-5" uid="Hybrid_Motor-5" entityUid="Hybrid_Motor*:*Default">
+<Transform>
+<Rotation>-0.86602540378444059 1.5618112713104968e-15 0.49999999999999667 0.49999999999999667 3.3712702885186435e-15 0.86602540378444059 -3.3306690738754706e-16 1 -3.7005113485360891e-15</Rotation>
+<Translation>-0.045747852215637687 0.063006461540964703 0.038499999999999805</Translation>
+</Transform>
+</Instance>
+<Instance name="Hybrid_Motor-6" uid="Hybrid_Motor-6" entityUid="Hybrid_Motor*:*Default">
+<Transform>
+<Rotation>2.2204460492503131e-15 -3.4794358032854013e-15 -0.99999999999999989 -1 4.1954669747250355e-16 -2.1094237467878002e-15 3.7332072753417108e-16 1 -3.4208746946262632e-15</Rotation>
+<Translation>0.011609999999990548 -0.017500000000093597 0.0385</Translation>
+</Transform>
+</Instance>
+<Instance name="Ga_Hybrid-2" uid="Ga_Hybrid-2" entityUid="Ga_Hybrid*:*Default">
+<Transform>
+<Rotation>-2.1649348980190553e-15 -3.4806290773469271e-15 1 1.0000000000000002 2.4688121504720638e-16 2.0539125955565396e-15 -2.4980018054066022e-16 1 3.4208746946262636e-15</Rotation>
+<Translation>0.0066099999999906086 -0.050000000000093622 0.003000000000000007</Translation>
+</Transform>
+</Instance>
+<Instance name="Ga_Hybrid2-1" uid="Ga_Hybrid2-1" entityUid="Ga_Hybrid2*:*Default">
+<Transform>
+<Rotation>-0.86602540378442783 8.3162183199933933e-16 -0.5000000000000191 -0.5000000000000191 -2.6125413307844699e-15 0.86602540378442783 -5.8606503253911121e-16 1 2.6783380768958118e-15</Rotation>
+<Translation>0.055061324650561932 0.11713505408872996 0.0030000000000000239</Translation>
+</Transform>
+</Instance>
+<Instance name="Part1-1" uid="Part1-1" entityUid="Part1*:*Default">
+<Transform>
+<Rotation>-0.77647460726192807 -0.38351947053238106 0.49999999999999667 0.44829782352157715 0.22142506955133495 0.86602540378444059 -0.44285013910266691 0.89659564704316319 -3.8302694349567901e-15</Rotation>
+<Translation>-0.034947852215637544 0.081712610262708513 0.038500000000000083</Translation>
+</Transform>
+</Instance>
+<Instance name="Hybrid_Motor-3" uid="Hybrid_Motor-3" entityUid="Hybrid_Motor*:*Default">
+<Transform>
+<Rotation>0.86602540378442794 0 0.50000000000001854 0.50000000000001854 -9.2287288921966137e-16 -0.86602540378442805 4.5796699765787707e-16 1.0000000000000002 -9.0166614317832297e-16</Rotation>
+<Translation>0.024415499027567983 0.1052151811076513 0.038499999999999993</Translation>
+</Transform>
+</Instance>
+<Instance name="Ga_Hybrid-1" uid="Ga_Hybrid-1" entityUid="Ga_Hybrid*:*Default">
+<Transform>
+<Rotation>0.86602540378444059 1.9489672523796181e-15 -0.49999999999999684 -0.49999999999999684 2.9316210935593766e-15 -0.86602540378444059 -2.2204460492503123e-16 1 3.5133419674825453e-15</Rotation>
+<Translation>-0.071393677838632041 0.08358658855988671 0.0030000000000000018</Translation>
+</Transform>
+</Instance>
+<Instance name="Ga_DinhMat-1" uid="Ga_DinhMat-1" grounded="true" entityUid="Ga_DinhMat*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Part1-2" uid="Part1-2" entityUid="Part1*:*Default">
+<Transform>
+<Rotation>0.67081752170470454 0.54772607439662646 0.50000000000001943 0.38729667673334978 0.31622979649508459 -0.86602540378442738 -0.63245959299014631 0.77459335346666824 -1.153200873104335e-15</Rotation>
+<Translation>0.035215499027568126 0.086509032385907889 0.038500000000000055</Translation>
+</Transform>
+</Instance>
+<Instance name="Part1-3" uid="Part1-3" entityUid="Part1*:*Default">
+<Transform>
+<Rotation>2.7857774998728965e-15 -2.8968078929147632e-15 -1 -0.97733723247359161 -0.21168829448238494 -2.1094237497187407e-15 -0.21168829448238494 0.97733723247359161 -3.4208746968244667e-15</Rotation>
+<Translation>-0.0099900000000095832 -0.017500000000093573 0.038499999999999847</Translation>
+</Transform>
+</Instance>
+<Instance name="Mat_Bich_8mm-4" uid="Mat_Bich_8mm-4" entityUid="Mat_Bich_8mm*:*Default">
+<Transform>
+<Rotation>-0.094820459922458175 -0.86081884295134781 -0.49999999999999639 0.054744618060919271 0.4969939907014575 -0.86602540378444082 0.99398798140292299 -0.10948923612183266 3.8857805861880479e-15</Rotation>
+<Translation>-0.16913724877411193 0.15456809233461949 -0.081505352311221954</Translation>
+</Transform>
+</Instance>
+<Instance name="Mat_Bich_8mm-6" uid="Mat_Bich_8mm-6" entityUid="Mat_Bich_8mm*:*Default">
+<Transform>
+<Rotation>0.28526104540379443 0.81769562550811914 -0.50000000000001987 0.16469554135320263 0.47209678950231759 0.86602540378442705 0.94419357900459699 -0.32939108270639328 7.9514066785165143e-16</Rotation>
+<Translation>0.13876178517558399 0.15091031072057093 -0.1126510568068185</Translation>
+</Transform>
+</Instance>
+<Instance name="Mat_Bich_8mm-8" uid="Mat_Bich_8mm-8" entityUid="Mat_Bich_8mm*:*Default">
+<Transform>
+<Rotation>0.28526104540376751 -0.81769562550812946 0.50000000000001843 0.16469554135318495 -0.47209678950232209 -0.86602540378442783 0.94419357900460799 0.3293910827063613 -2.2204460492503131e-15</Rotation>
+<Translation>0.14276178517559468 0.14398210749030169 -0.11265105680679913</Translation>
+</Transform>
+</Instance>
+<Instance name="Mat_Bich_8mm-3" uid="Mat_Bich_8mm-3" entityUid="Mat_Bich_8mm*:*Default">
+<Transform>
+<Rotation>-1.9093001109334927e-15 -4.4202992788906981e-15 1 0.9907982461939866 0.13534709209628637 2.4900058549640555e-15 -0.13534709209628637 0.9907982461939866 4.1212065552234792e-15</Rotation>
+<Translation>-0.0059900000000089309 -0.19472654239078013 -0.040814265250600577</Translation>
+</Transform>
+</Instance>
+<Instance name="Mat_Bich_8mm-5" uid="Mat_Bich_8mm-5" entityUid="Mat_Bich_8mm*:*Default">
+<Transform>
+<Rotation>-0.094820459922480296 0.86081884295134581 0.49999999999999539 0.054744618060931012 -0.49699399070145528 0.86602540378444115 0.99398798140292022 0.10948923612185768 -3.0947466811426239e-15</Rotation>
+<Translation>-0.16513724877411448 0.16149629556489614 -0.081505352311214196</Translation>
+</Transform>
+</Instance>
+<Instance name="TrucRenM6-1" uid="TrucRenM6-1" entityUid="TrucRenM6*:*Default">
+<Transform>
+<Rotation>-4.0140078087802573e-15 -1 -1.9948316265446021e-16 0.56646983123405081 -2.1094237470419976e-15 -0.82408247785137756 0.82408247785137756 -3.4208746946573222e-15 0.56646983123405081</Rotation>
+<Translation>0.010009999999990896 -0.19472654239078191 -0.040814265250591203</Translation>
+</Transform>
+</Instance>
+<Instance name="Bimattrau_M6 V2-1" uid="Bimattrau_M6 V2-1" entityUid="Bimattrau_M6 V2*:*Default">
+<Transform>
+<Rotation>-0.12720014361612755 0.06588006450966942 0.9896867891228206 0.3167189255845862 0.9482545360487834 -0.022415553516520088 -0.93995172516495862 0.31060127488970229 -0.14148357641899539</Rotation>
+<Translation>-0.04299000000000857 -0.1947265423907816 -0.040814265250596449</Translation>
+</Transform>
+</Instance>
+<Instance name="bi_mattrauM6 V2-2" uid="bi_mattrauM6 V2-2" entityUid="bi_mattrauM6 V2*:*Default">
+<Transform>
+<Rotation>0.0055493939821965703 0.0073968632518774061 0.99995724440621125 0.97959854254445067 0.20084516423880461 -0.0069220984300686437 -0.20088777880005126 0.97959507267846169 -0.0061313875151596088</Rotation>
+<Translation>-0.042990000000009111 -0.19472654239078194 -0.040814265250591425</Translation>
+</Transform>
+</Instance>
+<Instance name="Mat_Bich_8mm-1" uid="Mat_Bich_8mm-1" entityUid="Mat_Bich_8mm*:*Default">
+<Transform>
+<Rotation>-3.9158002474938167e-15 -2.1349032195203598e-15 -0.99999999999999989 0.13534709209627932 0.99079824619398749 -2.6452505424228487e-15 0.99079824619398749 -0.13534709209627932 -3.5908150749937904e-15</Rotation>
+<Translation>-0.013990000000008929 -0.19472654239078185 -0.040814265250591841</Translation>
+</Transform>
+</Instance>
+<Instance name="TrucRenM6-3" uid="TrucRenM6-3" entityUid="TrucRenM6*:*Default">
+<Transform>
+<Rotation>0.86117471747065977 0.49999999999999706 0.091531994348055562 -0.49719945495098178 0.86602540378444026 -0.052846021576308189 -0.10569204315262387 -3.9791190334564083e-15 0.99439890990196877</Rotation>
+<Translation>-0.17713724877411272 0.14071168587406749 -0.081505352311221843</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0 0 0.0030000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_Hybrid2-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1.0675221390626477e-16 -1 -3.4914813388431337e-15</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident12">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0 0 0.0030000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1.067522139062648e-16 -1 -3.4914813388431341e-15</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric11">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>-0.069252510291326494 0.062295199539337459 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0.012499999999999997 -0.0080000000000000591 0.017368299999999972</Position>
+<Axis>-1.067522139062648e-16 1 3.4914813388431341e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric12">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>-0.030281367121026657 0.039795199539337599 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0.057500000000000016 -0.0080000000000000557 0.017368299999999979</Position>
+<Axis>-1.067522139062648e-16 1 3.4914813388431341e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric15">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0.00091084095187914452 0.1059264431092781 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid2-1</Uid>
+</InstancePath>
+<Position>0.052500000000000019 -0.0080000000000000557 0.017368299999999948</Position>
+<Axis>-1.0675221390626477e-16 1 3.4914813388431337e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric16">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0.028944083272381092 0.12211144310927871 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid2-1</Uid>
+</InstancePath>
+<Position>0.020129999999999995 -0.0080000000000000591 0.017368299999999962</Position>
+<Axis>-1.0675221390626477e-16 1 3.4914813388431337e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident13">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_Hybrid2-1</Uid>
+</InstancePath>
+<Position>0.0084999999999999937 0.059500000000000004 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Hybrid_Motor-3</Uid>
+</InstancePath>
+<Position>0 0 0.0050000000000000044</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric17">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid2-1</Uid>
+</InstancePath>
+<Position>0.05607000000000003 0.059070000000000018 -0.0020000000000000018</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-3</Uid>
+</InstancePath>
+<Position>-0.023569999999999994 0.023570000000000015 0.0037300000000000111</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric18">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid2-1</Uid>
+</InstancePath>
+<Position>0.0089299999999999796 0.059069999999999998 -0.0020000000000000157</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-3</Uid>
+</InstancePath>
+<Position>0.023570000000000008 0.023570000000000015 0.0037300000000000111</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident15">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0.0085000000000000214 0.059500000000000018 0</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Hybrid_Motor-5</Uid>
+</InstancePath>
+<Position>0 0 0.0050000000000000044</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric20">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0.056070000000000023 0.059070000000000025 -0.0020000000000000018</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-5</Uid>
+</InstancePath>
+<Position>-0.023570000000000001 0.023570000000000001 0.0037300000000000111</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric21">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0.0089299999999999935 0.059070000000000011 -0.0020000000000000018</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-5</Uid>
+</InstancePath>
+<Position>0.023570000000000021 0.023570000000000001 0.003730000000000018</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric22">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0.0089300000000000213 0.011930000000000003 -0.0020000000000000018</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-5</Uid>
+</InstancePath>
+<Position>0.023570000000000008 -0.023569999999999997 0.0037300000000000041</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric23">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-1</Uid>
+</InstancePath>
+<Position>0.056070000000000023 0.011930000000000007 -0.0019999999999999948</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-5</Uid>
+</InstancePath>
+<Position>-0.023570000000000001 -0.023570000000000001 0.0037300000000000041</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric24">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-5</Uid>
+</InstancePath>
+<Position>0 0 -0.010717135623730948</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0 0 0.0039999999999999897</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident18">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Hybrid_Motor-5</Uid>
+</InstancePath>
+<Position>0 0 0.025600000000000005</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.041008782858369702 -0.32996140642274369 0.0040000000000000036</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric25">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-3</Uid>
+</InstancePath>
+<Position>0 0 -0.010717135623730972</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0 0 0.0040000000000000174</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident19">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Hybrid_Motor-3</Uid>
+</InstancePath>
+<Position>0 0 0.025600000000000019</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0.041008782858369786 -0.32996140642274385 0.0039999999999999966</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident20">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Hybrid_Motor-6</Uid>
+</InstancePath>
+<Position>0 0 0.0049999999999999992</Position>
+<Axis>-1.1102230246251378e-16 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0.0085000000000000145 0.059500000000000011 0</Position>
+<Axis>-1.1102230246251612e-16 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric26">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-6</Uid>
+</InstancePath>
+<Position>-0.023570000000000001 0.023569999999999994 0.0037300000000000059</Position>
+<Axis>1.1102230246251378e-16 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0.056070000000000036 0.059070000000000025 -0.0020000000000000104</Position>
+<Axis>-1.1102230246251612e-16 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric27">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-6</Uid>
+</InstancePath>
+<Position>0.023570000000000001 0.023570000000000008 0.0037299999999999989</Position>
+<Axis>1.1102230246251378e-16 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0.0089300000000000004 0.059070000000000011 -0.0020000000000000044</Position>
+<Axis>-1.1102230246251612e-16 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric28">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-6</Uid>
+</InstancePath>
+<Position>0.023570000000000008 -0.023570000000000001 0.0037299999999999972</Position>
+<Axis>1.1102230246251378e-16 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0.0089300000000000143 0.011930000000000001 -0.0020000000000000018</Position>
+<Axis>-1.1102230246251612e-16 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric29">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-6</Uid>
+</InstancePath>
+<Position>-0.023570000000000001 -0.023570000000000001 0.0037300000000000024</Position>
+<Axis>1.1102230246251378e-16 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0.056070000000000036 0.011930000000000007 -0.0020000000000000078</Position>
+<Axis>-1.1102230246251612e-16 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric30">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Hybrid_Motor-6</Uid>
+</InstancePath>
+<Position>0 0 -0.010717135623730951</Position>
+<Axis>-1.1102230246251378e-16 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0 0 0.0040000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident21">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Hybrid_Motor-6</Uid>
+</InstancePath>
+<Position>0 0 0.025599999999999991</Position>
+<Axis>-1.1102230246251378e-16 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.041008782858369751 -0.32996140642274385 0.0040000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident22">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0 0 0.0030000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1.0967117939971173e-16 -1 -3.4317269561224706e-15</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric31">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0.023978299999990585 -0.037500000000093577 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0.012500000000000004 -0.0080000000000000609 0.017368299999999968</Position>
+<Axis>-1.0967117939971173e-16 1 3.4317269561224706e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric32">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0.023978299999990491 0.0074999999999064287 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Ga_Hybrid-2</Uid>
+</InstancePath>
+<Position>0.05750000000000003 -0.0080000000000000557 0.017368299999999962</Position>
+<Axis>-1.0967117939971173e-16 1 3.4317269561224706e-15</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric34">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.18589575828009203 -0.028723688550569105 -0.0059999999999999993</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>0.012000000000000337 3.6082248300317588e-16 0.0029999999999999992</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident23">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.041008782858369751 -0.32996140642274385 0.0040000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric35">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.20127631144943095 -0.035895758280092019 -0.0059999999999999993</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>6.6613381477509392e-16 -0.012000000000000011 0.0030000000000000027</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric36">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.17872368855056917 -0.04410424171990799 -0.0059999999999999993</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>0 0.012000000000000011 0.0029999999999999992</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric37">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.19410424171990803 -0.051276311449430907 -0.0059999999999999993</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>-0.011999999999999664 -3.3306690738754696e-16 0.0030000000000000027</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident25">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.041008782858369751 -0.32996140642274385 -0.0040000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric48">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>0.19410424171990803 -0.051276311449430907 -0.0059999999999999993</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-3</Uid>
+</InstancePath>
+<Position>6.9388939039072284e-16 -0.011999999999999997 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric49">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>0 0.012000000000000011 0.0029999999999999992</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-3</Uid>
+</InstancePath>
+<Position>0.012000000000000371 3.4694469519536142e-16 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident26">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.04100878285836973 -0.32996140642274374 -0.0039999999999999966</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric50">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.18589575828009194 -0.028723688550569101 -0.0060000000000000123</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-4</Uid>
+</InstancePath>
+<Position>0.012000000000000351 3.3306690738754696e-16 0.0030000000000000096</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric51">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.17872368855056903 -0.044104241719907969 -0.0060000000000000261</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-4</Uid>
+</InstancePath>
+<Position>6.9388939039072284e-16 -0.012000000000000011 0.0030000000000000235</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric52">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.20127631144943087 -0.035895758280092005 -0.0060000000000000123</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-4</Uid>
+</InstancePath>
+<Position>0 0.011999999999999983 0.0030000000000000165</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident27">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.041008782858369702 -0.32996140642274369 0.0040000000000000036</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-5</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric54">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.18589575828009194 -0.028723688550569101 -0.0060000000000000123</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-5</Uid>
+</InstancePath>
+<Position>0.01200000000000033 3.3306690738754696e-16 0.0029999999999999818</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric55">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.20127631144943087 -0.035895758280092005 -0.0060000000000000123</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-5</Uid>
+</InstancePath>
+<Position>6.8001160258290838e-16 -0.012000000000000011 0.0029999999999999957</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric56">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>0.17872368855056903 -0.044104241719907969 -0.0060000000000000261</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-5</Uid>
+</InstancePath>
+<Position>0 0.011999999999999955 0.0029999999999999888</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident28">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0.041008782858369786 -0.32996140642274385 -0.0040000000000000174</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1.8217696436252243e-16 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric57">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0.185895758280092 -0.028723688550569157 -0.0059999999999999915</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-6</Uid>
+</InstancePath>
+<Position>0.012000000000000344 3.3306690738754696e-16 0.0029999999999999957</Position>
+<Axis>0 -1.8217696436252243e-16 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric58">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0.17872368855056911 -0.044104241719908052 -0.0060000000000000192</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-6</Uid>
+</InstancePath>
+<Position>6.7307270867900115e-16 -0.011999999999999983 0.0030000000000000235</Position>
+<Axis>0 -1.8217696436252243e-16 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident30">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0.041008782858369786 -0.32996140642274385 0.0039999999999999966</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-8</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric69">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0.185895758280092 -0.028723688550569157 -0.0059999999999999915</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-8</Uid>
+</InstancePath>
+<Position>0.01200000000000033 3.6082248300317588e-16 0.0030000000000000027</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric70">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>0.19410424171990801 -0.051276311449430956 -0.0059999999999999915</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-8</Uid>
+</InstancePath>
+<Position>-0.011999999999999664 -3.6082248300317588e-16 0.0030000000000000027</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric72">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-3</Uid>
+</InstancePath>
+<Position>0 0 0.0030000000000000001</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0 0.040000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric73">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident31">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>0 0 0.012999999999999991</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-2</Uid>
+</InstancePath>
+<Position>0.00013912149199335477 0.00018543694229922192 0.025068601043217752</Position>
+<Axis>-0.0055493939821979997 -0.0073968632518810013 -0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Angle name="LimitAngle1">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-1</Uid>
+</InstancePath>
+<Position>0 0 -0.0030000000000000027</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-2</Uid>
+</InstancePath>
+<Position>-1.8776234387257729e-05 -2.5027100002877889e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979555 0.0073968632518809614 0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Angle>
+<Concentric name="Concentric74">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle3">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-2</Uid>
+</InstancePath>
+<Position>0 0 -0.0029999999999999957</Position>
+<Axis>-3.0531133177191805e-16 -2.7061686225238191e-16 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-3</Uid>
+</InstancePath>
+<Position>-1.8776234387257729e-05 -2.5027100002877889e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979546 0.0073968632518809614 0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Angle>
+<Coincident name="Coincident37">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0 0.040000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-3</Uid>
+</InstancePath>
+<Position>0.00013912149199335477 0.00018543694229922192 0.025068601043217755</Position>
+<Axis>-0.0055493939821979997 -0.007396863251881004 -0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident38">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0 0.040000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-4</Uid>
+</InstancePath>
+<Position>0.00013912149199335477 0.00018543694229922192 0.025068601043217755</Position>
+<Axis>-0.0055493939821980812 -0.0073968632518809554 -0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident41">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-2</Uid>
+</InstancePath>
+<Position>0.024347078879170071 0 0</Position>
+<Axis>-0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-1</Uid>
+</InstancePath>
+<Position>0 0 0.155</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident44">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-2</Uid>
+</InstancePath>
+<Position>0.012117500000000003 0 0</Position>
+<Axis>0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-1</Uid>
+</InstancePath>
+<Position>0 0 0.17499999999999999</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident45">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-1</Uid>
+</InstancePath>
+<Position>0.02480000000000001 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-2</Uid>
+</InstancePath>
+<Position>0 0 0.15500000000000003</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident46">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-1</Uid>
+</InstancePath>
+<Position>0.012117499999999996 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-2</Uid>
+</InstancePath>
+<Position>0 0 0.17499999999999999</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric78">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle7">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-4</Uid>
+</InstancePath>
+<Position>0 0 -0.0029999999999999888</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-2</Uid>
+</InstancePath>
+<Position>-1.8776234387285484e-05 -2.5027100002877889e-05 -0.0033833300822479241</Position>
+<Axis>0.0055493939821979563 0.0073968632518809788 0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Angle>
+<Concentric name="Concentric79">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-5</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle8">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-5</Uid>
+</InstancePath>
+<Position>0 0 -0.0030000000000000027</Position>
+<Axis>-1.6653345369377348e-16 -2.2204460492503131e-16 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-3</Uid>
+</InstancePath>
+<Position>-1.8776234387285484e-05 -2.5027100002884828e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979468 0.0073968632518809294 0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Angle>
+<Concentric name="Concentric80">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle9">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-6</Uid>
+</InstancePath>
+<Position>0 0 -0.0030000000000000027</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-4</Uid>
+</InstancePath>
+<Position>-1.8776234387229973e-05 -2.5027100002877889e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979607 0.0073968632518809129 0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Angle>
+<Concentric name="Concentric81">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-5</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-7</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle10">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-7</Uid>
+</InstancePath>
+<Position>0 0 -0.0029999999999999957</Position>
+<Axis>0 0 0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-5</Uid>
+</InstancePath>
+<Position>-1.8776234387285484e-05 -2.5027100002891767e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979537 0.0073968632518809606 0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Angle>
+<Concentric name="Concentric82">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-8</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle11">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-8</Uid>
+</InstancePath>
+<Position>0 0 -0.0030000000000000027</Position>
+<Axis>0 1.2490009027033011e-16 0.99999999999999967</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-6</Uid>
+</InstancePath>
+<Position>-1.8776234387285484e-05 -2.5027100002898706e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979555 0.0073968632518809614 0.99995724440621148</Axis>
+</ConstraintGeometry>
+</Angle>
+<Concentric name="Concentric83">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-9</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle12">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-9</Uid>
+</InstancePath>
+<Position>0 0 -0.0029999999999999818</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Assem1-1</Uid>
+<Uid>bi_mattrauM6 V2-1</Uid>
+</InstancePath>
+<Position>-1.8776234387285484e-05 -2.5027100002891767e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979529 0.0073968632518808938 0.99995724440621114</Axis>
+</ConstraintGeometry>
+</Angle>
+<Coincident name="Coincident56">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-2</Uid>
+</InstancePath>
+<Position>0 0 -0.15500000000000005</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-8</Uid>
+</InstancePath>
+<Position>0.024347078879170092 0 0</Position>
+<Axis>-1 1.1102230246251565e-16 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident57">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-1</Uid>
+</InstancePath>
+<Position>0 0 -0.15499999999999992</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-7</Uid>
+</InstancePath>
+<Position>0.024347078879170037 0 0</Position>
+<Axis>-0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident58">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-1</Uid>
+</InstancePath>
+<Position>0 0 -0.17499999999999993</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-7</Uid>
+</InstancePath>
+<Position>0.012117499999999948 0 0</Position>
+<Axis>0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident59">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-2</Uid>
+</InstancePath>
+<Position>0 0 -0.17500000000000002</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-8</Uid>
+</InstancePath>
+<Position>0.012117500000000003 0 0</Position>
+<Axis>1 -1.1102230246251565e-16 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric85">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Mat_Bich_8mm-8</Uid>
+</InstancePath>
+<Position>0 0 0.012999999999999984</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0 0.040000000000000015 0</Position>
+<Axis>-2.3266558685187346e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric86">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-10</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle19">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-10</Uid>
+</InstancePath>
+<Position>0 0 -0.0029999999999999957</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-6</Uid>
+</InstancePath>
+<Position>-1.8776234387257729e-05 -2.5027100002877889e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821977464 0.00739686325188084 0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Angle>
+<Coincident name="Coincident63">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0 0.040000000000000015 0</Position>
+<Axis>-2.3266558685187346e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-6</Uid>
+</InstancePath>
+<Position>0.00013912149199338253 0.00018543694229922192 0.025068601043217731</Position>
+<Axis>-0.0055493939821978505 -0.0073968632518809354 -0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident68">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-10</Uid>
+</InstancePath>
+<Position>0.024347078879170023 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-3</Uid>
+</InstancePath>
+<Position>0 0 0.15499999999999997</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident69">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-10</Uid>
+</InstancePath>
+<Position>0.012117499999999989 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-3</Uid>
+</InstancePath>
+<Position>0 0 0.17499999999999996</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric92">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-14</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-10</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle24">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-14</Uid>
+</InstancePath>
+<Position>0 0 -0.0029999999999999888</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-10</Uid>
+</InstancePath>
+<Position>-1.8776234387257729e-05 -2.5027100002877889e-05 -0.0033833300822479345</Position>
+<Axis>0.005549393982197939 0.0073968632518809614 0.99995724440621148</Axis>
+</ConstraintGeometry>
+</Angle>
+<Coincident name="Coincident70">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-14</Uid>
+</InstancePath>
+<Position>0.024347078879170064 0 0</Position>
+<Axis>-1 0 1.2490009027033011e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-4</Uid>
+</InstancePath>
+<Position>0 0 0.15499999999999997</Position>
+<Axis>0 1.6653345369377348e-16 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident71">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-14</Uid>
+</InstancePath>
+<Position>0.012117499999999976 0 0</Position>
+<Axis>1 0 -1.2490009027033011e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-4</Uid>
+</InstancePath>
+<Position>0 0 0.17499999999999993</Position>
+<Axis>0 1.6653345369377348e-16 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident72">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0 0.040000000000000015 0</Position>
+<Axis>-2.3266558685187346e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-10</Uid>
+</InstancePath>
+<Position>0.00013912149199335477 0.00018543694229922192 0.025068601043217745</Position>
+<Axis>-0.00554939398219805 -0.0073968632518810031 -0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric93">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-15</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-11</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle25">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-15</Uid>
+</InstancePath>
+<Position>0 0 -0.0030000000000000165</Position>
+<Axis>-1.1102230246251565e-16 1.3877787807814457e-16 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-11</Uid>
+</InstancePath>
+<Position>-1.8776234387285484e-05 -2.5027100002905645e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979728 0.0073968632518808452 0.99995724440621148</Axis>
+</ConstraintGeometry>
+</Angle>
+<Coincident name="Coincident73">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-15</Uid>
+</InstancePath>
+<Position>0.024347078879170078 0 0</Position>
+<Axis>-1 0 1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-5</Uid>
+</InstancePath>
+<Position>0 0 0.15499999999999997</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident74">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-15</Uid>
+</InstancePath>
+<Position>0.012117500000000017 0 0</Position>
+<Axis>1 0 -1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-5</Uid>
+</InstancePath>
+<Position>0 0 0.17499999999999996</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident75">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Mat_Bich_8mm-4</Uid>
+</InstancePath>
+<Position>0 0 0.013000000000000012</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-11</Uid>
+</InstancePath>
+<Position>0.0001391214919933409 0.00018543694229922192 0.025068601043217752</Position>
+<Axis>-0.0055493939821980014 -0.0073968632518809632 -0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric94">
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-16</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="sphere">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-12</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+</ConstraintGeometry>
+</Concentric>
+<Angle name="LimitAngle26">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-16</Uid>
+</InstancePath>
+<Position>0 0 -0.0030000000000000027</Position>
+<Axis>0 1.9428902930940239e-16 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-12</Uid>
+</InstancePath>
+<Position>-1.8776234387285484e-05 -2.5027100002891767e-05 -0.0033833300822479206</Position>
+<Axis>0.0055493939821979667 0.0073968632518809588 0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Angle>
+<Coincident name="Coincident76">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-16</Uid>
+</InstancePath>
+<Position>0.02434707887917005 0 0</Position>
+<Axis>-1 -1.1102230246251565e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-6</Uid>
+</InstancePath>
+<Position>0 0 0.15500000000000003</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident77">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-16</Uid>
+</InstancePath>
+<Position>0.012117499999999989 0 0</Position>
+<Axis>1 1.1102230246251565e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-6</Uid>
+</InstancePath>
+<Position>0 0 0.17500000000000002</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident78">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Mat_Bich_8mm-5</Uid>
+</InstancePath>
+<Position>0 0 0.012999999999999984</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-12</Uid>
+</InstancePath>
+<Position>0.00013912149199335477 0.00018543694229920804 0.025068601043217759</Position>
+<Axis>-0.0055493939821979685 -0.0073968632518810022 -0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident86">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-5</Uid>
+</InstancePath>
+<Position>0.024347078879170037 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-4</Uid>
+</InstancePath>
+<Position>0 0 -0.15500000000000003</Position>
+<Axis>0 -1.6653345369377348e-16 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident87">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-6</Uid>
+</InstancePath>
+<Position>0.024347078879170037 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-3</Uid>
+</InstancePath>
+<Position>0 0 -0.15500000000000003</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident88">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-4</Uid>
+</InstancePath>
+<Position>0.024347078879170092 0 0</Position>
+<Axis>-1 0 1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-5</Uid>
+</InstancePath>
+<Position>0 0 -0.15500000000000003</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident89">
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-9</Uid>
+</InstancePath>
+<Position>0.024347078879170092 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="line">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-6</Uid>
+</InstancePath>
+<Position>0 0 -0.15500000000000003</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident92">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-5</Uid>
+</InstancePath>
+<Position>0.012117500000000003 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-4</Uid>
+</InstancePath>
+<Position>0 0 -0.17500000000000004</Position>
+<Axis>0 -1.6653345369377348e-16 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident93">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-6</Uid>
+</InstancePath>
+<Position>0.012117500000000003 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-3</Uid>
+</InstancePath>
+<Position>0 0 -0.17499999999999999</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident94">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-9</Uid>
+</InstancePath>
+<Position>0.012117500000000059 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-6</Uid>
+</InstancePath>
+<Position>0 0 -0.17500000000000004</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident95">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bimattrau_M6 V2-4</Uid>
+</InstancePath>
+<Position>0.012117500000000003 0 0</Position>
+<Axis>1 0 -1.1102230246251565e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>ThanhTruyen_450mm-5</Uid>
+</InstancePath>
+<Position>0 0 -0.17500000000000004</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Angle name="LimitAngle27">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-1</Uid>
+</InstancePath>
+<Position>-0.0045877690016223743 0.0220273097673718 0.0039999999999999966</Position>
+<Axis>-0.2039008445165503 0.97899154521652421 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0 0 0.0030000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Angle>
+<Angle name="LimitAngle28">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-2</Uid>
+</InstancePath>
+<Position>-0.0045877690016223743 0.0220273097673718 0.0040000000000000036</Position>
+<Axis>-0.20390084451655049 0.97899154521652432 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0 0 0.0030000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Angle>
+<Angle name="LimitAngle29">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Part1-3</Uid>
+</InstancePath>
+<Position>-0.0045877690016223639 0.0220273097673718 0.0040000000000000001</Position>
+<Axis>-0.2039008445165503 0.97899154521652432 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0 0 0.0030000000000000001</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Angle>
+<Coincident name="Coincident96">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Khung-1</Uid>
+</InstancePath>
+<Position>0.63429999999999964 0.58999999999999986 0</Position>
+<Axis>0 1 -1.7622587696729994e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident97">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0.33000000000000002 -0.29899999999999988 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Khung-1</Uid>
+</InstancePath>
+<Position>0.013000000000000012 -1.1102230246251565e-16 0.015000000000000013</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident98">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Ga_DinhMat-1</Uid>
+</InstancePath>
+<Position>0.29900000000000004 -0.32999999999999985 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Khung-1</Uid>
+</InstancePath>
+<Position>0.015000000000000013 -2.2204460492503131e-16 0.0042999999999999705</Position>
+<Axis>0.99999999999999989 0 -2.7755575615628909e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric95">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>0 0 0.012999999999999994</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric96">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0 0.040000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-2</Uid>
+</InstancePath>
+<Position>7.2142121768564715e-05 9.6159222274447287e-05 0.012999444177280741</Position>
+<Axis>-0.0055493939821979997 -0.0073968632518810013 -0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric97">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-3</Uid>
+</InstancePath>
+<Position>7.2142121768564715e-05 9.6159222274461165e-05 0.012999444177280746</Position>
+<Axis>-0.005549393982197998 -0.0073968632518810022 -0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric98">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mat_Bich_8mm-4</Uid>
+</InstancePath>
+<Position>0 0 0.013000000000000012</Position>
+<Axis>0 0 -1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>TrucRenM6-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1.4300546443721264e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Distance name="Distance1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-3</Uid>
+</InstancePath>
+<Position>0.0029999999999999749 0 0</Position>
+<Axis>-1.4300546443721264e-16 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-4</Uid>
+</InstancePath>
+<Position>0 0 0.013000000000000012</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Distance>
+<Concentric name="Concentric99">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-11</Uid>
+</InstancePath>
+<Position>0.00013873484955494175 0.00018492158129701508 0.02499893111015531</Position>
+<Axis>-0.0055493939821980075 -0.0073968632518809632 -0.99995724440621148</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-3</Uid>
+</InstancePath>
+<Position>0 0.039999999999999959 0</Position>
+<Axis>-1.4300546443721264e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident101">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-11</Uid>
+</InstancePath>
+<Position>-0.0033081043264680809 0.0037804314434085051 0.012990950075606161</Position>
+<Axis>0.0055493939821980075 0.0073968632518809632 0.99995724440621148</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-3</Uid>
+</InstancePath>
+<Position>0.0050000000000000044 0.039999999999999987 0</Position>
+<Axis>1.4300546443721264e-16 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric100">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-12</Uid>
+</InstancePath>
+<Position>0.00013873484955492787 0.00018492158129701508 0.02499893111015529</Position>
+<Axis>-0.005549393982198024 -0.0073968632518810013 -0.99995724440621137</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1.4300546443721264e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident102">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-12</Uid>
+</InstancePath>
+<Position>-0.0033081043264681087 0.0037804314434085051 0.012990950075606134</Position>
+<Axis>0.005549393982198024 0.0073968632518810013 0.99995724440621137</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-3</Uid>
+</InstancePath>
+<Position>0.0029999999999999749 0 0</Position>
+<Axis>-1.4300546443721264e-16 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Distance name="Distance2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0.0050000000000000044 0.040000000000000008 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-1</Uid>
+</InstancePath>
+<Position>0 0 0.012999999999999994</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Distance>
+<Coincident name="Coincident105">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0.0050000000000000044 0.040000000000000008 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-2</Uid>
+</InstancePath>
+<Position>-0.0033081043264681087 0.003780431443408519 0.012990950075606141</Position>
+<Axis>0.0055493939821979997 0.0073968632518810013 0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident106">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-1</Uid>
+</InstancePath>
+<Position>0.0030000000000000027 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-3</Uid>
+</InstancePath>
+<Position>-0.0033081043264680532 0.0037804314434085329 0.012990950075606146</Position>
+<Axis>0.005549393982197998 0.0073968632518810022 0.99995724440621125</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Distance name="Distance3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0.0050000000000000044 0.040000000000000029 0</Position>
+<Axis>2.3266558685187346e-16 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mat_Bich_8mm-6</Uid>
+</InstancePath>
+<Position>0 0 0.013000000000000032</Position>
+<Axis>0 1.8217696436252243e-16 1</Axis>
+</ConstraintGeometry>
+</Distance>
+<Concentric name="Concentric101">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-2.3266558685187346e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-6</Uid>
+</InstancePath>
+<Position>0.00013873484955495563 0.00018492158129701508 0.024998931110155276</Position>
+<Axis>-0.0055493939821977959 -0.0073968632518809068 -0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric102">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0 0.040000000000000015 0</Position>
+<Axis>-2.3266558685187346e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-10</Uid>
+</InstancePath>
+<Position>0.00013873484955495563 0.00018492158129702896 0.02499893111015529</Position>
+<Axis>-0.0055493939821981055 -0.007396863251881004 -0.99995724440621148</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident108">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0.0050000000000000044 0.040000000000000029 0</Position>
+<Axis>2.3266558685187346e-16 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-10</Uid>
+</InstancePath>
+<Position>-0.0033081043264680809 0.003780431443408519 0.012990950075606134</Position>
+<Axis>0.0055493939821981055 0.007396863251881004 0.99995724440621148</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident109">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TrucRenM6-2</Uid>
+</InstancePath>
+<Position>0.0030000000000000027 0 0</Position>
+<Axis>-2.3266558685187346e-16 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>bi_mattrauM6 V2-6</Uid>
+</InstancePath>
+<Position>-0.0033081043264680671 0.0037804314434085329 0.012990950075606147</Position>
+<Axis>0.0055493939821977959 0.0073968632518809068 0.99995724440621137</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+<Assembly name="Assem1" uid="Assem1" version="239">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Assem1.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+</Assemblies>
+<Parts>
+<Part name="Bimattrau_M6 V2" uid="Bimattrau_M6 V2*:*Default" version="120">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Bimattrau_M6 V2.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0033247279749796851</Mass>
+<CenterOfMass>0.0053901006568425362 1.2693904035212777e-05 0.0023839621375504661</CenterOfMass>
+<Inertia>1.7663613613536067e-07 3.8228180222179979e-07 2.6655258075280943e-07 -8.3747922148899637e-10 4.1930313037662833e-08 2.3307799719656896e-10</Inertia>
+</MassProperties>
+<GeometryFile name="Bimattrau_M6 V2_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="1" g="0.94901960784313721" b="0.90980392156862744" a="1"/>
+<Diffuse r="1" g="0.94901960784313721" b="0.90980392156862744" a="1"/>
+<Specular r="0.5" g="0.47450980392156861" b="0.45490196078431372" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="GA_RAC_HUT" uid="GA_RAC_HUT*:*Default" version="562">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="GA_RAC_HUT.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.13895197293190803</Mass>
+<CenterOfMass>0 0 0.0037004733463183643</CenterOfMass>
+<Inertia>4.3566046440685935e-05 4.3566046440685461e-05 8.568634723190281e-05 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="GA_RAC_HUT_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0" g="1" b="0" a="1"/>
+<Diffuse r="0" g="1" b="0" a="1"/>
+<Specular r="0" g="0.69999999999999996" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Ga_DinhMat" uid="Ga_DinhMat*:*Default" version="4659">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Ga_DinhMat.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>1.0584246209041859</Mass>
+<CenterOfMass>0.00027537887818213292 -0.0079575543458019742 0.0014999999999999996</CenterOfMass>
+<Inertia>0.038161939504359796 0.039816314151142423 0.077976666018570853 0 0 3.5335506564317694e-05</Inertia>
+</MassProperties>
+<GeometryFile name="Ga_DinhMat_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Diffuse r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Specular r="0.37647058823529411" g="0.37647058823529411" b="0.37647058823529411" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Ga_Hybrid" uid="Ga_Hybrid*:*Default" version="466">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Ga_Hybrid.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.016818161383208741</Mass>
+<CenterOfMass>0.032476566308381007 0.013722391190599153 0.020999135674500163</CenterOfMass>
+<Inertia>1.6790259794300049e-05 1.7098461565511114e-05 1.4135588854549712e-05 4.5924770546269666e-06 6.3970577862822207e-09 -4.985056555841381e-09</Inertia>
+</MassProperties>
+<GeometryFile name="Ga_Hybrid_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.11372549019607843" g="0.11372549019607843" b="0.11372549019607843" a="1"/>
+<Diffuse r="0.11372549019607843" g="0.11372549019607843" b="0.11372549019607843" a="1"/>
+<Specular r="0.056862745098039215" g="0.056862745098039215" b="0.056862745098039215" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Ga_Hybrid2" uid="Ga_Hybrid2*:*Default" version="416">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Ga_Hybrid2.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.016818161383208737</Mass>
+<CenterOfMass>0.032503768712957487 0.013722391190599134 0.020999135674500201</CenterOfMass>
+<Inertia>1.6790259794300019e-05 1.7137036152715179e-05 1.4174163441753773e-05 4.5924770546269633e-06 -1.4372826662382334e-08 8.3536655242252417e-10</Inertia>
+</MassProperties>
+<GeometryFile name="Ga_Hybrid2_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.11372549019607843" g="0.11372549019607843" b="0.11372549019607843" a="1"/>
+<Diffuse r="0.11372549019607843" g="0.11372549019607843" b="0.11372549019607843" a="1"/>
+<Specular r="0.056862745098039215" g="0.056862745098039215" b="0.056862745098039215" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Hybrid_Motor" uid="Hybrid_Motor*:*Default" version="187">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Hybrid_Motor.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.22010439753403485</Mass>
+<CenterOfMass>-2.281552760344103e-06 8.7664959440581555e-05 -0.032362237295027699</CenterOfMass>
+<Inertia>0.00016060452280837123 0.00015999739517581264 0.00010178184702017082 6.515827472927578e-07 -1.8264337145279765e-08 5.0308825661577775e-10</Inertia>
+</MassProperties>
+<GeometryFile name="Hybrid_Motor_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Diffuse r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Specular r="0.12549019607843137" g="0.12549019607843137" b="0.12549019607843137" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Khung" uid="Khung*:*Default&lt;As Machined&gt;" version="941">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Khung.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>4.0942923525847004</Mass>
+<CenterOfMass>0.31502256914731241 0.45572195848636932 0.31060023909589451</CenterOfMass>
+<Inertia>0.57719838621901476 0.5359943163110461 0.5713592868040247 0.0021486612553108177 -1.4273859400276289e-05 -1.1026846044061983e-05</Inertia>
+</MassProperties>
+<GeometryFile name="Khung_Default&lt;As Machined&gt;_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Diffuse r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Specular r="0.37647058823529411" g="0.37647058823529411" b="0.37647058823529411" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Mat_Bich_8mm" uid="Mat_Bich_8mm*:*Default" version="155">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Mat_Bich_8mm.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.028974793210745121</Mass>
+<CenterOfMass>0 0 0.0042075049065381596</CenterOfMass>
+<Inertia>1.7949728876597685e-06 1.7949728876597694e-06 2.7688563642541048e-06 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Mat_Bich_8mm_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.54352941176470582" g="0.52980392156862743" b="0.51607843137254905" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Part1" uid="Part1*:*Default" version="1988">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Part1.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.059045270373860995</Mass>
+<CenterOfMass>0.083305425649629478 -0.0062571823595606244 0</CenterOfMass>
+<Inertia>2.6922828970602189e-05 0.00025803005195514366 0.00028432306470842466 0 0 4.6279299221024086e-05</Inertia>
+</MassProperties>
+<GeometryFile name="Part1_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="1" g="1" b="1" a="1"/>
+<Diffuse r="1" g="1" b="1" a="1"/>
+<Specular r="1" g="1" b="1" a="1"/>
+<Emissive r="0.29999999999999999" g="0.29999999999999999" b="0.29999999999999999" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="ThanhTruyen_450mm" uid="ThanhTruyen_450mm*:*Default" version="549">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="ThanhTruyen_450mm.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.13012557405110847</Mass>
+<CenterOfMass>-5.1306095307494882e-09 3.277437767145025e-07 -3.9960490469374281e-07</CenterOfMass>
+<Inertia>0.0012376943184896512 0.0012376943287855673 1.0138884511553061e-06 -1.8611506973467561e-09 -2.1095069411510381e-09 -1.0423350052315357e-11</Inertia>
+</MassProperties>
+<GeometryFile name="ThanhTruyen_450mm_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.62352941176470589" g="0.76078431372549016" b="1" a="1"/>
+<Diffuse r="0.62352941176470589" g="0.76078431372549016" b="1" a="1"/>
+<Specular r="0.31176470588235294" g="0.38039215686274508" b="0.5" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="TrucRenM6" uid="TrucRenM6*:*Default" version="391">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="TrucRenM6.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.014573965676714857</Mass>
+<CenterOfMass>-5.6362807150794328e-07 0.020019503261753429 1.8441643589415376e-06</CenterOfMass>
+<Inertia>2.0757471763634579e-06 2.5782103929648617e-07 2.0757498003018945e-06 -2.0641272636836555e-10 9.2084723376564393e-12 -1.6986526976582034e-10</Inertia>
+</MassProperties>
+<GeometryFile name="TrucRenM6_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.54352941176470582" g="0.52980392156862743" b="0.51607843137254905" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="bi_mattrauM6 V2" uid="bi_mattrauM6 V2*:*Default" version="161">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="bi_mattrauM6 V2.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0033247279749796851</Mass>
+<CenterOfMass>0.0053901006568425362 1.2693904035212777e-05 0.0023839621375504661</CenterOfMass>
+<Inertia>1.7663613613536067e-07 3.8228180222179979e-07 2.6655258075280943e-07 -8.3747922148899637e-10 4.193031303766284e-08 2.3307799719655924e-10</Inertia>
+</MassProperties>
+<GeometryFile name="bi_mattrauM6 V2_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="1" g="0.94901960784313721" b="0.90980392156862744" a="1"/>
+<Diffuse r="1" g="0.94901960784313721" b="0.90980392156862744" a="1"/>
+<Specular r="0.5" g="0.47450980392156861" b="0.45490196078431372" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>
