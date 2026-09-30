@@ -24,9 +24,11 @@ Traj.wp_T     = 1.0;                     % [s] mode 3: thoi gian di moi doan
 Traj.wp_dwell = 0.5;                     % [s] mode 3: thoi gian dung tai moi diem
 
 % --- Dong co & driver ---
-Motor.steps_rev  = 200;     % buoc / vong cua dong co (1.8 deg/buoc)
-Motor.microstep  = 16;      % vi buoc cai tren driver
-Motor.gear       = 1;       % ti so truyen dong co -> canh tay (1 = noi truc tiep)
+% Dong co buoc lai co encoder + driver HDB CZ880 + hop so 1:10 (do ngay 30/09/2026, solieu_encoder/)
+Motor.steps_rev   = 200;    % buoc / vong cua dong co (1.8 deg/buoc)
+Motor.microstep   = 4;      % driver dat 800 xung / vong truc dong co = 200 x 4 (DIP SW1-SW4)
+Motor.gear        = 10;     % hop so 1:10 -> 1 vong canh tay = 10 vong dong co = 8000 xung
+Motor.encoder_ppr = 1000;   % encoder 1000 vach -> 4000 dem/vong dong co -> 40000 dem/vong canh tay
 
 % --- Vat lieu ---
 VatLieu.rho_thanh = 2700;   % [kg/m^3] 6 thanh truyen: nhom (thep ~7850). Khoi luong tinh tu hinh hoc STEP

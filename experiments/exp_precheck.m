@@ -97,6 +97,10 @@ res1 = vecnorm(Jac)*stepDeg*1e3;
 fprintf('  1 vi buoc = %.4f deg (%d buoc x %d vi buoc x ti so %g)\n', stepDeg, Motor.steps_rev, Motor.microstep, Motor.gear);
 fprintf('  TCP dich chuyen / 1 vi buoc:  %.3f  %.3f  %.3f mm  (dong co 1 2 3)\n', res1);
 fprintf('  TCP dich chuyen / 1 buoc du:  %.2f  %.2f  %.2f mm\n', res1*Motor.microstep);
+if isfield(Motor, 'encoder_ppr')
+    encDeg = 360/(4*Motor.encoder_ppr*Motor.gear);
+    fprintf('  Encoder: 1 dem = %.4f deg canh tay -> TCP %.4f  %.4f  %.4f mm\n', encDeg, vecnorm(Jac)*encDeg*1e3);
+end
 
 %% 4. Quy dao mau
 fprintf('\n===== 4. QUY DAO MAU (IK + mo phong) =====\n');
@@ -109,7 +113,10 @@ for c = 1:size(cases,1)
     J = exp_jointtraj(Tj, cases{c,3}, G, Lim, Motor);
     S = exp_simulate(Tj, cases{c,3});
     tq = max(abs(S.torque), [], 1);
-    fprintf('  mo-men can (mo phong) max:    %.2f  %.2f  %.2f N*m\n', tq);
+    fprintf('  mo-men can (mo phong) max:    %.2f  %.2f  %.2f N*m  (tai canh tay)\n', tq);
+    if Motor.gear ~= 1
+        fprintf('  quy ve truc dong co (/%g):    %.3f %.3f %.3f N*m  (chua tinh hieu suat hop so)\n', Motor.gear, tq/Motor.gear);
+    end
     if ~J.pass, warn{end+1} = sprintf('Quy dao "%s": %s', cases{c,1}, strjoin(J.issues,'; ')); end %#ok<AGROW>
     if isnan(Lim.torque)
         if c == size(cases,1)
