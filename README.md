@@ -183,6 +183,63 @@ Giao thức đã được thử với một vi điều khiển giả lập (có 
 | Lệnh động cơ trong mô phỏng | Khối IK xuất θ, θ̇, θ̈ tính chính xác (`RobotDelta_IKd`, sai phân trung tâm h = 10⁻⁴ s); SPS ở chế độ 3 cổng (*Provide signal and derivatives*) | Sai số bám TCP 0.000 mm (chế độ lọc 5 ms cũ: 1.89 mm do trễ); mô-men không đổi |
 | Khung | **Đã sửa (2026-09-28):** `Khung.SLDPRT` cũ là phiên bản khác (trọng tâm cao hơn 68.2 mm) nên tấm đế trông như tụt xuống. Model giờ dùng `Khung.STEP` xuất từ cụm lắp, `rd_checkgeom` báo lệch 0.1 mm | Không cần làm gì thêm; có thể xóa `Khung.SLDPRT` cũ. Khung gắn cứng với đất nên các kết quả động lực học không đổi |
 
+## Bộ điều khiển dự báo NMPC (`nmpc/`)
+
+Phương án A: NMPC chạy trên máy tính (sau này là Raspberry Pi 4) và xuất góc/vận tốc đặt cho driver bước vòng kín. Mô hình động lực học được dùng để dự báo mô-men và ràng buộc mô-men.
+
+| Thành phần | Chức năng |
+|---|---|
+| `lib/RobotDelta_Dyn.m` | Động lực học ngược rút gọn (Codourey): τ = I_b·q̈ − g·m_r·cos q + Jᵀ·m_p·(p̈ − g). Tuyến tính theo 3 tham số |
+| `tools/rd_identdyn.m` | Nhận dạng `[I_b m_r m_p]` từ mô-men Simscape, ghi vào `params/RobotDelta_DynParams.m`. Sai số kiểm chứng 2.1 % |
+| `nmpc/rd_dyn_sym.m` | Cùng mô hình, viết để chạy được với CasADi |
+| `nmpc/RobotDelta_NMPC_build.m` | Tạo bài toán OCP bằng acados và sinh mã C vào `work/nmpc_c` |
+| `nmpc/nmpc_sim.m` | Mô phỏng vòng kín trong MATLAB: sai số TCP, mô-men, thời gian giải |
+| `tools/rd_acados.m` | Nạp acados và CasADi. Đường dẫn đặt trong `local/RobotDelta_Local.m` |
+| `tools/build_RobotDelta_NMPC.m` | Tạo `models/RobotDelta_NMPC.slx` từ `RobotDelta_Sim.slx`: thay khối IK bằng subsystem NMPC (ChuanBi → S-function acados → NoiSuy) |
+| `nmpc/nmpc_simscape.m` | Chạy NMPC với robot Simscape đầy đủ, so với IK truyền thẳng. Mô-men lấy từ Simscape |
+
+**Subsystem NMPC** (`RobotDelta_NMPC.slx`):
+- **ChuanBi** (rời rạc, Ts): tính tham chiếu N bước từ IK của quỹ đạo. Trạng thái gửi cho bộ giải là x0 = trạng thái lệnh + [d; 0], trong đó d = góc encoder − góc lệnh (lấy cùng thời điểm qua một khối Memory). Nếu driver trễ hoặc mất bước thì d ≠ 0 và NMPC tự lập lại quỹ đạo.
+- **acados_NMPC**: S-function `work/acados_solver_sfunction_robotdelta`, tạo bằng `RobotDelta_NMPC_build(true)`.
+- **NoiSuy** (liên tục): lệnh cho driver trong một chu kỳ, q = q_c + q̇_c·τ + u·τ²/2. Trên robot thật, vi điều khiển phát xung STEP theo đúng biểu thức này.
+
+Lần đầu trên máy mới: `RobotDelta_NMPC_build(true); build_RobotDelta_NMPC; nmpc_simscape()`.
+
+Bài toán: trạng thái x = [q; q̇], đầu vào u = q̈, mô hình ẋ = [q̇; u].
+- Chi phí bám theo q_r, q̇_r, q̈_r lấy từ IK của quỹ đạo.
+- Ràng buộc: góc, vận tốc, gia tốc, và |τ| ≤ `Nmpc.tau_max` (ràng buộc mềm).
+- Bộ giải: SQP-RTI + HPIPM, Ts = 10 ms, N = 20. Các tham số nằm trong `RobotDelta_Params.m` → `Nmpc`.
+
+**Cài đặt, mỗi máy một lần.** Cần MATLAB, Visual Studio 2022 (trình biên dịch C) và git.
+```powershell
+mkdir C:\Matlab2025\tools_ext; cd C:\Matlab2025\tools_ext     # thư mục cạnh dự án
+# CasADi 3.7.2 (acados chưa kiểm thử với bản 3.8)
+Invoke-WebRequest https://github.com/casadi/casadi/releases/download/3.7.2/casadi-3.7.2-windows64-matlab2018b.zip -OutFile casadi.zip
+Expand-Archive casadi.zip casadi
+git clone --recurse-submodules https://github.com/acados/acados.git
+cd acados; mkdir build; cd build
+$cm = "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe"
+& $cm -G "Visual Studio 17 2022" -A x64 -DACADOS_INSTALL_DIR="C:/Matlab2025/tools_ext/acados" -DBUILD_SHARED_LIBS=OFF -DBLASFEO_TARGET=GENERIC -DHPIPM_TARGET=GENERIC ..
+& $cm --build . -j 8 --target INSTALL --config Release
+```
+Nếu đặt ở chỗ khác, khai báo `Local.acadosDir` và `Local.casadiDir`. Sau đó chạy trong MATLAB: `R = nmpc_sim();`
+
+Kết quả mô phỏng (2026-10-11, máy VO1HV, driver lý tưởng):
+
+| Trường hợp | Sai số TCP | max \|τ\| | Thời gian giải trung bình / lớn nhất |
+|---|---|---|---|
+| Đường tròn R60, 2 s/vòng | < 0.001 mm | 0.60 N·m | 0.44 / 1.3 ms |
+| Gắp–đặt 0.6 s/chu kỳ, τ_max = 2 | RMS 0.017 mm | 1.33 N·m | 0.44 / 0.9 ms |
+| Gắp–đặt 0.6 s/chu kỳ, **τ_max = 0.8** | RMS 22.6 mm (chủ động chậm lại) | **0.82 N·m** (giữ giới hạn) | 1.0 / 2.7 ms |
+
+Trên robot Simscape đầy đủ (`nmpc_simscape`, mô-men đo từ Simscape):
+
+| Trường hợp | IK truyền thẳng: TCP / max\|τ\| | NMPC: TCP RMS / max | NMPC max\|τ\| | Thời gian giải TB / max |
+|---|---|---|---|---|
+| Đường tròn R60, 2 s/vòng | 0 mm / 0.60 N·m | < 0.001 / < 0.001 mm | 0.60 N·m | 0.41 / 1.0 ms |
+| Gắp–đặt 0.6 s/chu kỳ | 0 mm / 1.25 N·m | 0.017 / 0.068 mm | 1.26 N·m | 0.43 / 1.1 ms |
+| Gắp–đặt 0.6 s/chu kỳ, τ_max = 0.8 | 0 mm / 1.25 N·m | 23.9 / 60.2 mm | **0.84 N·m** (vượt 5 % do mô hình rút gọn sai 2 % và RTI) | 1.0 / 2.5 ms |
+
 ## Khi sửa CAD
 
 1. Trong SolidWorks, xuất lại bằng Simscape Multibody Link vào `cad/export/` (XML + STEP).
