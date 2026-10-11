@@ -251,6 +251,6 @@ Trên robot Simscape đầy đủ (`nmpc_simscape`, mô-men đo từ Simscape):
 ## Thông tin còn thiếu để hoàn thiện phần robot thật
 
 - Vi điều khiển và firmware đang dùng (Arduino / STM32 / ESP32…), driver, có encoder không, tỉ số truyền.
-- Model động cơ (mô-men giữ, đường đặc tính mô-men–tốc độ) → `Lim.torque`, `Lim.omega`.
+- Động cơ HS57-64, thân dài 76 mm, hộp số 57PX10 (1:10). **Chưa có datasheet đúng mã.** Đang dùng giá trị điển hình của dòng 57 mm dài 76 mm: mô-men giữ 2,0 N·m, quán tính rôto 4,8·10⁻⁵ kg·m² (quy về cánh tay gần bằng I_b), suy ra `Nmpc.tau_max = Lim.torque` ≈ 8,2 N·m. Cần datasheet hoặc đo thực nghiệm: mô-men giữ, đường mô-men–tốc độ, quán tính rôto.
 - Datasheet bi mắt trâu M6 (góc nghiêng cho phép) → `Lim.tilt_rodend`.
 - Góc tay khi chạm công tắc home → `Real.theta_home` trong `params/RobotDelta_Real.m`.
