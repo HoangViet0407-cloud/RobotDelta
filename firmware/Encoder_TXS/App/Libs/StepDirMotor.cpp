@@ -1,0 +1,162 @@
+#include "StepDirMotor.h"
+
+namespace
+{
+/* Only short register/state copies. Never wait, print or divide in this scope.
+ * Also serializes the UART stop callback against move()/arm() in main.
+ * Hardware encoder counting continues while CPU interrupts are masked.
+ */
+class CriticalSection
+{
+public:
+  CriticalSection() : saved_(__get_PRIMASK()) { __disable_irq(); }
+  ~CriticalSection() { __set_PRIMASK(saved_); }
+  CriticalSection(const CriticalSection &) = delete;
+  CriticalSection &operator=(const CriticalSection &) = delete;
+private:
+  uint32_t saved_;
+};
+}
+
+bool StepDirMotor::init(uint32_t counterClock_hz, uint32_t minFrequency_hz,
+    uint32_t maxFrequency_hz, uint32_t maxPulses,
+    uint32_t armAndDirectionHold_ms, bool forwardIsHigh)
+{
+  if (timer_ == nullptr || dirPort_ == nullptr || oePort_ == nullptr ||
+      dirPin_ == 0U || oePin_ == 0U || counterClock_hz == 0U ||
+      minFrequency_hz == 0U || maxFrequency_hz < minFrequency_hz ||
+      maxPulses == 0U)
+    return false;
+  /* Restrict this implementation to general-purpose TIM2..TIM5, CH1. */
+  if (timer_->Instance != TIM2 && timer_->Instance != TIM3 &&
+      timer_->Instance != TIM4 && timer_->Instance != TIM5)
+    return false;
+  if (counterClock_hz / minFrequency_hz > 65535U ||
+      counterClock_hz / maxFrequency_hz < 2U)
+    return false;
+  if ((timer_->Instance->CCMR1 & (TIM_CCMR1_CC1S | TIM_CCMR1_OC1M)) !=
+      TIM_OCMODE_PWM2 || (timer_->Instance->CCER & TIM_CCER_CC1P) != 0U ||
+      (timer_->Instance->CR1 & (TIM_CR1_DIR | TIM_CR1_CMS)) != 0U)
+    return false;
+
+  HAL_GPIO_WritePin(oePort_, oePin_, GPIO_PIN_RESET);
+  counterClock_hz_ = counterClock_hz;
+  minFrequency_hz_ = minFrequency_hz;
+  maxFrequency_hz_ = maxFrequency_hz;
+  maxPulses_ = maxPulses;
+  hold_ms_ = armAndDirectionHold_ms;
+  forwardIsHigh_ = forwardIsHigh;
+
+  CriticalSection lock;
+  TIM_TypeDef *tim = timer_->Instance;
+  CLEAR_BIT(tim->CR1, TIM_CR1_CEN | TIM_CR1_UDIS);
+  tim->DIER = 0U; // This object owns the entire timer.
+  SET_BIT(tim->CR1, TIM_CR1_OPM | TIM_CR1_URS | TIM_CR1_ARPE);
+  MODIFY_REG(tim->CCMR1, TIM_CCMR1_OC1M, TIM_OCMODE_FORCED_INACTIVE);
+  SET_BIT(tim->CCMR1, TIM_CCMR1_OC1PE);
+  tim->CNT = 0U;
+  tim->EGR = TIM_EGR_UG;
+  tim->SR = 0U;
+  SET_BIT(tim->CCER, TIM_CCER_CC1E); // Drive low even with CEN=0.
+  HAL_GPIO_WritePin(dirPort_, dirPin_, GPIO_PIN_RESET);
+  ready_ = true;
+  armed_ = busy_ = aborted_ = false;
+  requested_ = completed_ = frequency_hz_ = 0U;
+  idleSince_ms_ = HAL_GetTick();
+  return true;
+}
+
+bool StepDirMotor::arm()
+{
+  CriticalSection lock;
+  if (!ready_ || busy_)
+    return false;
+  if (!armed_)
+  {
+    idleSince_ms_ = HAL_GetTick();
+    armed_ = true;
+    HAL_GPIO_WritePin(oePort_, oePin_, GPIO_PIN_SET);
+  }
+  return true;
+}
+
+bool StepDirMotor::move(uint32_t pulses, uint32_t frequency_hz, bool forward)
+{
+  if (!ready_ || pulses == 0U || pulses > maxPulses_ ||
+      frequency_hz < minFrequency_hz_ || frequency_hz > maxFrequency_hz_)
+    return false;
+  const uint32_t period = counterClock_hz_ / frequency_hz; // Outside IRQ mask.
+
+  CriticalSection lock;
+  if (!armed_ || busy_ ||
+      static_cast<uint32_t>(HAL_GetTick() - idleSince_ms_) < hold_ms_)
+    return false;
+
+  TIM_TypeDef *tim = timer_->Instance;
+  CLEAR_BIT(tim->CR1, TIM_CR1_CEN);
+  tim->DIER = 0U;
+  tim->CNT = 0U;
+  tim->ARR = period - 1U;
+  tim->CCR1 = period / 2U; // First half LOW (also DIR setup), second half HIGH.
+  tim->EGR = TIM_EGR_UG;   // Load PSC/ARR/CCR before starting, no pulse counted.
+  tim->SR = 0U;
+  HAL_GPIO_WritePin(dirPort_, dirPin_,
+      forward == forwardIsHigh_ ? GPIO_PIN_SET : GPIO_PIN_RESET);
+  forward_ = forward;
+  requested_ = pulses;
+  completed_ = 0U;
+  frequency_hz_ = frequency_hz;
+  aborted_ = false;
+  busy_ = true;
+  MODIFY_REG(tim->CCMR1, TIM_CCMR1_OC1M, TIM_OCMODE_PWM2);
+  SET_BIT(tim->DIER, TIM_DIER_UIE);
+  SET_BIT(tim->CR1, TIM_CR1_CEN);
+  return true;
+}
+
+void StepDirMotor::onPeriodElapsedISR()
+{
+  if (!ready_ || !busy_)
+    return;
+  /* HAL already cleared UIF. OPM already cleared CEN; CNT=0, STEP=LOW.
+   * Delayed ISR => longer LOW gap, never uncontrolled extra pulses.
+   */
+  ++completed_;
+  if (completed_ >= requested_ || !armed_)
+  {
+    CLEAR_BIT(timer_->Instance->DIER, TIM_DIER_UIE);
+    busy_ = false;
+    idleSince_ms_ = HAL_GetTick();
+  }
+  else
+  {
+    SET_BIT(timer_->Instance->CR1, TIM_CR1_CEN);
+  }
+}
+
+void StepDirMotor::abort()
+{
+  CriticalSection lock;
+  if (!ready_)
+    return;
+  HAL_GPIO_WritePin(oePort_, oePin_, GPIO_PIN_RESET);
+  TIM_TypeDef *tim = timer_->Instance;
+  CLEAR_BIT(tim->CR1, TIM_CR1_CEN);
+  tim->DIER = 0U;
+  /* A completed pulse may be awaiting its update ISR. Account for it once. */
+  if (busy_ && (tim->SR & TIM_SR_UIF) != 0U && completed_ < requested_)
+    ++completed_;
+  MODIFY_REG(tim->CCMR1, TIM_CCMR1_OC1M, TIM_OCMODE_FORCED_INACTIVE);
+  tim->CNT = 0U;
+  tim->SR = 0U;
+  aborted_ = busy_;
+  busy_ = armed_ = false;
+  idleSince_ms_ = HAL_GetTick();
+}
+
+MotorSnapshot StepDirMotor::snapshot() const
+{
+  CriticalSection lock;
+  return {ready_, armed_, busy_, aborted_, forward_,
+          requested_, completed_, frequency_hz_};
+}

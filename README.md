@@ -2,6 +2,16 @@
 
 Mô hình Simscape Multibody của robot delta (3 động cơ, 6 thanh truyền, khớp cầu bi mắt trâu M6), kèm bộ công cụ để chạy **cùng một quỹ đạo** trên mô phỏng và robot thật rồi so sánh kết quả.
 
+## Firmware STM32 — Encoder_TXS
+
+Mã nguồn và hướng dẫn cho NUCLEO-F446RE nằm tại
+[`firmware/Encoder_TXS`](firmware/Encoder_TXS/README.md): TIM1 đọc encoder,
+TIM2 phát STEP/DIR một trục, USART2 nhận lệnh qua USB ST-LINK. Dự án dùng
+C++17, tổ chức App/Libs và có snapshot encoder không dùng PRIMASK.
+Xem README của firmware để import vào CubeIDE, build và đấu dây.
+Hiện đang điều tra hiện tượng quay vượt lệnh trên bộ thử TXS/CZ880;
+chưa tích hợp NMPC hoặc xác nhận vận hành robot thật.
+
 ## Bắt đầu nhanh
 
 1. Trong MATLAB, mở project: nhấp đúp `RobotDelta.prj`, hoặc chạy `openProject('<thư mục dự án>')`. Thư mục dự án đặt ở đâu cũng được.
