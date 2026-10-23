@@ -4,7 +4,7 @@
 /* ===================== SETUP ========================== */
 void setup(void)
 {
-  const bool motorOk = XX_initMotor(); // OE stays LOW; never auto-arm.
+  const bool motorOk = XX_initMotor(); // STEP low, ENA STOP level; never auto-arm.
   const bool encoderOk = XX_initEncoder();
   XX_initComm(); // Start asynchronous RX only after motor object is ready.
   if (!motorOk)
@@ -27,7 +27,8 @@ void loop(void)
   XX_serviceMotor();
 
   uint8_t command;
-  if (XX_readCommand(command))
+  uint32_t argument;
+  if (XX_readCommand(command, argument))
   {
     switch (command)
     {
@@ -68,16 +69,28 @@ void loop(void)
             !dev.encoder->snapshot().overflow && dev.motor->arm();
         __set_PRIMASK(saved);
         if (armed)
-          XX_write("ARMED: TXS OE=3.3V; f/b sends one burst. ! or d stops\r\n");
+        {
+          XX_write("ARMED: software STEP permission; ENA set to RUN level. Driver state unverified.\r\n");
+          XX_reportMotor();
+        }
         else
           XX_write("ARM rejected: check init/encoder; wait for IDLE and ZERO confirmation\r\n");
         break;
       }
+      case 'v': case 'V':
+        XX_toggleEnaPolarity();
+        break;
       case 'f': case 'F':
-        XX_moveMotor(true);
+        XX_selectMotorDirection(true);
         break;
       case 'b': case 'B':
-        XX_moveMotor(false);
+        XX_selectMotorDirection(false);
+        break;
+      case 'n':
+        XX_setMotorPulses(argument);
+        break;
+      case 'g': case 'G':
+        XX_moveMotor();
         break;
       case '+':
       case '-':

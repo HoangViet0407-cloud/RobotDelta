@@ -65,8 +65,8 @@ void Error_Handler(void);
 #define MOTOR_STEP_GPIO_Port GPIOA
 #define MOTOR_DIR_Pin GPIO_PIN_4
 #define MOTOR_DIR_GPIO_Port GPIOA
-#define TXS_OE_Pin GPIO_PIN_0
-#define TXS_OE_GPIO_Port GPIOB
+#define MOTOR_ENA_Pin GPIO_PIN_0
+#define MOTOR_ENA_GPIO_Port GPIOB
 #define ENC_A_Pin GPIO_PIN_8
 #define ENC_A_GPIO_Port GPIOA
 #define ENC_B_Pin GPIO_PIN_9

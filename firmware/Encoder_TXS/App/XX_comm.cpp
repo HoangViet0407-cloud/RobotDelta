@@ -10,6 +10,19 @@ static volatile uint32_t rxHead = 0;
 static volatile uint32_t rxTail = 0;
 static volatile uint32_t rxNotice = 0; // 1=stop command, 2=UART/ring error.
 static volatile bool rxListening = false;
+// Text input belongs to foreground only; the RX ISR only queues bytes/stops.
+static bool pulseEntry = false;
+static bool pulseEntryInvalid = false;
+static uint8_t pulseDigits = 0;
+static uint32_t pulseValue = 0;
+static uint32_t inputEpoch = 0;
+
+static void resetPulseEntry()
+{
+  pulseEntry = pulseEntryInvalid = false;
+  pulseDigits = 0;
+  pulseValue = 0;
+}
 
 static void stopFromRx(uint32_t reason)
 {
@@ -40,7 +53,7 @@ void XX_initComm()
   startRx();
 }
 
-bool XX_readCommand(uint8_t &command)
+static bool readRxByte(uint8_t &command)
 {
   const uint32_t saved = __get_PRIMASK();
   __disable_irq();
@@ -55,6 +68,80 @@ bool XX_readCommand(uint8_t &command)
   return available;
 }
 
+bool XX_readCommand(uint8_t &command, uint32_t &argument)
+{
+  argument = 0U;
+  uint8_t ch;
+  // Bound work per loop even if a sender keeps filling the RX ring.
+  for (uint32_t consumed = 0; consumed < COMM_RX_BUFFER_BYTES && readRxByte(ch); ++consumed)
+  {
+    if (inputEpoch != dev.commandEpoch)
+    {
+      resetPulseEntry(); // !/d or UART error cancels unfinished numeric input.
+      inputEpoch = dev.commandEpoch;
+    }
+    if (pulseEntry)
+    {
+      if (ch == 27U) // Escape: cancel without changing the configured count.
+      {
+        resetPulseEntry();
+        XX_write("PULSES input cancelled; previous value unchanged\r\n");
+      }
+      else if (ch == '\r' || ch == '\n')
+      {
+        const bool valid = !pulseEntryInvalid && pulseDigits != 0U;
+        const uint32_t value = pulseValue;
+        resetPulseEntry();
+        if (valid)
+        {
+          command = 'n';
+          argument = value;
+          return true;
+        }
+        XX_write("PULSES input invalid: send n<number> then Enter; previous value unchanged\r\n");
+      }
+      else if (ch == '\b' || ch == 127U)
+      {
+        if (!pulseEntryInvalid && pulseDigits != 0U)
+        {
+          pulseValue /= 10U;
+          --pulseDigits;
+        }
+      }
+      else if (ch >= '0' && ch <= '9')
+      {
+        const uint32_t digit = ch - '0';
+        if (!pulseEntryInvalid)
+        {
+          if (pulseDigits >= 10U || pulseValue > (UINT32_MAX - digit) / 10U)
+            pulseEntryInvalid = true;
+          else
+          {
+            pulseValue = pulseValue * 10U + digit;
+            ++pulseDigits;
+          }
+        }
+      }
+      else if (ch != ' ' && ch != '\t')
+        pulseEntryInvalid = true; // No partial acceptance of e.g. n800x.
+      continue;
+    }
+    if (ch == 'n' || ch == 'N')
+    {
+      resetPulseEntry();
+      pulseEntry = true;
+      XX_write("PULSES: type integer then Enter; Backspace edits, Esc cancels, ! stops\r\n");
+      continue;
+    }
+    if (ch != 0U && strchr("zZsSpPrReEfFbBgGvVmM?10+-", static_cast<int>(ch)) != nullptr)
+    {
+      command = ch;
+      return true;
+    }
+  }
+  return false;
+}
+
 void XX_serviceComm()
 {
   const uint32_t saved = __get_PRIMASK();
@@ -66,7 +153,10 @@ void XX_serviceComm()
     rxNotice = 0U;
   __set_PRIMASK(saved);
   if ((notice & 1U) != 0U)
-    XX_write("STOP: pulses aborted, TXS OE=0. Send e again to arm\r\n");
+  {
+    XX_write("STOP: STEP low, software DISARMED; ENA set to STOP level. Driver power remains ON.\r\n");
+    XX_reportMotor();
+  }
   if ((notice & 2U) != 0U)
     XX_write("UART/ring error: motor disarmed; RX recovery attempted\r\n");
 }
@@ -106,7 +196,7 @@ static void formatMilli(int64_t value, char out[32])
 void XX_printHelp()
 {
   char line[112];
-  XX_write("\r\nEncoder_TXS: TIM1 encoder + TIM2 single-pulse STEP; USART2 IRQ RX.\r\n");
+  XX_write("\r\nEncoder_TXS DIRECT_ENA v3: variable pulse count + preselected DIR; USART2 IRQ RX.\r\n");
   XX_write("Encoder v2: atomic snapshot, no encoder IRQ masking; z ack on next SysTick.\r\n");
   (void)snprintf(line, sizeof(line),
       "CPR=%ld/motor_rev; gear=%ld; report=%lu ms. Relative position.\r\n",
@@ -114,15 +204,25 @@ void XX_printHelp()
       static_cast<unsigned long>(COMM_REPORT_PERIOD_MS));
   XX_write(line);
   XX_write("z: zero | s: stream ON | p: stream OFF | r: read once | ?: help\r\n");
-  XX_write("e: arm TXS | f/b: forward/reverse burst | ! or d: stop + disarm\r\n");
+  XX_write("n<number> + Enter: next pulse count | f/b: select forward/reverse (NO motion)\r\n");
+  XX_write("e: arm + ENA RUN | g: GO once using selected count/DIR | ! or d: stop + ENA STOP\r\n");
+  XX_write("v: invert ENA RUN/STOP levels (DISARMED only; reset restores default)\r\n");
   XX_write("+/-: next speed (idle only) | m: motor status | 1/0: LED on/off\r\n");
-  (void)snprintf(line, sizeof(line), "Burst=%lu pulses; default=%lu Hz; range=%lu..%lu Hz\r\n",
-      static_cast<unsigned long>(MOTOR_MOVE_PULSES),
+  (void)snprintf(line, sizeof(line), "Pulses default=%lu, range=1..%lu; speed default=%lu Hz, range=%lu..%lu Hz\r\n",
+      static_cast<unsigned long>(MOTOR_DEFAULT_PULSES),
+      static_cast<unsigned long>(MOTOR_MAX_MOVE_PULSES),
       static_cast<unsigned long>(MOTOR_DEFAULT_HZ),
       static_cast<unsigned long>(MOTOR_MIN_HZ), static_cast<unsigned long>(MOTOR_MAX_HZ));
   XX_write(line);
-  XX_write("PA0=STEP, PA4=DIR, PB0=TXS OE (dedicated motor TXS). Boot DISARMED.\r\n");
-  XX_write("p only stops reports. ! cuts pulses, NOT driver power/ENA. Zero at rest.\r\n");
+  (void)snprintf(line, sizeof(line), "Motor=%lu pulses/rev; gearbox=1:%ld. Settings reset on boot.\r\n",
+      static_cast<unsigned long>(MOTOR_STEPS_PER_REV), static_cast<long>(ENC_GEAR_RATIO));
+  XX_write(line);
+  XX_write("PA0=STEP, PA4=DIR, PB0=ENA; direct 3.3V GPIO. Boot DISARMED (software).\r\n");
+  (void)snprintf(line, sizeof(line), "Default ENA RUN=%s, STOP=%s; v override is lost on reset.\r\n",
+      MOTOR_ENA_RUN_HIGH ? "HIGH" : "LOW", MOTOR_ENA_RUN_HIGH ? "LOW" : "HIGH");
+  XX_write(line);
+  XX_write("ENA_cmd is GPIO latch, NOT driver status. 3.3V input electrical margins unverified.\r\n");
+  XX_write("p only stops reports. ! cuts STEP and sets ENA STOP, NOT power. Zero at rest.\r\n");
 }
 
 void XX_resetReportWindow()
@@ -173,8 +273,8 @@ extern "C" void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   else if (ch == '!' || ch == 'd' || ch == 'D')
     stopFromRx(1U); // Process even during a blocking terminal print.
   else if (rxNotice == 0U &&
-           strchr("zZsSpPrReEfFbBmM?10+-", static_cast<int>(ch)) != nullptr &&
-           ch != 0U)
+           ((ch >= 32U && ch <= 126U) || ch == '\r' || ch == '\n' ||
+            ch == '\t' || ch == '\b' || ch == 127U || ch == 27U))
   {
     const uint32_t next = (rxHead + 1U) % COMM_RX_BUFFER_BYTES;
     if (next == rxTail)

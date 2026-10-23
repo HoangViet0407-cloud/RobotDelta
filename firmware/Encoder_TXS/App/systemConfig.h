@@ -16,19 +16,25 @@
 #define COMM_TX_TIMEOUT_MS       20U
 #define COMM_RX_BUFFER_BYTES     32U
 
-/* ===================== MOTOR / TXS ================= */
+/* ===================== MOTOR / STEP-DIR-ENA ========= */
 #define MOTOR_DIR_PORT           MOTOR_DIR_GPIO_Port
-#define MOTOR_OE_PORT            TXS_OE_GPIO_Port
-#define MOTOR_OE_PIN             TXS_OE_Pin
+#define MOTOR_ENA_PORT           MOTOR_ENA_GPIO_Port
+#define MOTOR_ENA_PIN            MOTOR_ENA_Pin
 #define MOTOR_STEPS_PER_REV      800U
-#define MOTOR_MOVE_PULSES        80U
-#define MOTOR_MAX_MOVE_PULSES    800U
+#define MOTOR_DEFAULT_PULSES     80U
+#define MOTOR_MAX_MOVE_PULSES    80000U
 #define MOTOR_DEFAULT_HZ         100U
 #define MOTOR_MIN_HZ             50U
 #define MOTOR_MAX_HZ             500U
 #define MOTOR_FREQUENCY_STEP_HZ  50U
 #define MOTOR_ARM_DIR_HOLD_MS    3U
 #define MOTOR_FORWARD_IS_HIGH   true
+/* User bench observation 2026-10-23: this setup moves with ENA LOW.
+ * RUN=LOW, STOP=HIGH. 'v' is a diagnostic override in RAM only.
+ * CubeMX initializes PB0 HIGH before setup(); keep its PinState consistent
+ * if changing this default. ARMED is software permission, not driver feedback.
+ */
+#define MOTOR_ENA_RUN_HIGH       false
 
 /* Clock, baud UART, TIM1 ARR/filter va pin label cau hinh trong .ioc.
  * SysTick HAL hien tai goi appTick1ms moi 1 ms.
@@ -40,7 +46,7 @@
 #if COMM_REPORT_PERIOD_MS == 0 || COMM_TX_TIMEOUT_MS == 0
 #error "Communication intervals must be positive"
 #endif
-#if MOTOR_MOVE_PULSES == 0 || MOTOR_MOVE_PULSES > MOTOR_MAX_MOVE_PULSES
+#if MOTOR_DEFAULT_PULSES == 0 || MOTOR_DEFAULT_PULSES > MOTOR_MAX_MOVE_PULSES
 #error "Invalid motor burst size"
 #endif
 #if MOTOR_MIN_HZ == 0 || MOTOR_DEFAULT_HZ < MOTOR_MIN_HZ || MOTOR_DEFAULT_HZ > MOTOR_MAX_HZ

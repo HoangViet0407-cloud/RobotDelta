@@ -20,10 +20,10 @@ private:
 
 bool StepDirMotor::init(uint32_t counterClock_hz, uint32_t minFrequency_hz,
     uint32_t maxFrequency_hz, uint32_t maxPulses,
-    uint32_t armAndDirectionHold_ms, bool forwardIsHigh)
+    uint32_t armAndDirectionHold_ms, bool forwardIsHigh, bool enaRunHigh)
 {
-  if (timer_ == nullptr || dirPort_ == nullptr || oePort_ == nullptr ||
-      dirPin_ == 0U || oePin_ == 0U || counterClock_hz == 0U ||
+  if (timer_ == nullptr || dirPort_ == nullptr || enaPort_ == nullptr ||
+      dirPin_ == 0U || enaPin_ == 0U || counterClock_hz == 0U ||
       minFrequency_hz == 0U || maxFrequency_hz < minFrequency_hz ||
       maxPulses == 0U)
     return false;
@@ -39,13 +39,13 @@ bool StepDirMotor::init(uint32_t counterClock_hz, uint32_t minFrequency_hz,
       (timer_->Instance->CR1 & (TIM_CR1_DIR | TIM_CR1_CMS)) != 0U)
     return false;
 
-  HAL_GPIO_WritePin(oePort_, oePin_, GPIO_PIN_RESET);
   counterClock_hz_ = counterClock_hz;
   minFrequency_hz_ = minFrequency_hz;
   maxFrequency_hz_ = maxFrequency_hz;
   maxPulses_ = maxPulses;
   hold_ms_ = armAndDirectionHold_ms;
   forwardIsHigh_ = forwardIsHigh;
+  enaRunHigh_ = enaRunHigh;
 
   CriticalSection lock;
   TIM_TypeDef *tim = timer_->Instance;
@@ -58,7 +58,9 @@ bool StepDirMotor::init(uint32_t counterClock_hz, uint32_t minFrequency_hz,
   tim->EGR = TIM_EGR_UG;
   tim->SR = 0U;
   SET_BIT(tim->CCER, TIM_CCER_CC1E); // Drive low even with CEN=0.
-  HAL_GPIO_WritePin(dirPort_, dirPin_, GPIO_PIN_RESET);
+  forward_ = true;
+  HAL_GPIO_WritePin(dirPort_, dirPin_, forwardIsHigh_ ? GPIO_PIN_SET : GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(enaPort_, enaPin_, enaRunHigh_ ? GPIO_PIN_RESET : GPIO_PIN_SET);
   ready_ = true;
   armed_ = busy_ = aborted_ = false;
   requested_ = completed_ = frequency_hz_ = 0U;
@@ -75,8 +77,32 @@ bool StepDirMotor::arm()
   {
     idleSince_ms_ = HAL_GetTick();
     armed_ = true;
-    HAL_GPIO_WritePin(oePort_, oePin_, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(enaPort_, enaPin_, enaRunHigh_ ? GPIO_PIN_SET : GPIO_PIN_RESET);
   }
+  return true;
+}
+
+bool StepDirMotor::setEnaRunHigh(bool high)
+{
+  CriticalSection lock;
+  if (!ready_ || armed_ || busy_)
+    return false;
+  enaRunHigh_ = high;
+  // STEP is already low; changing polarity changes the STOP output level too.
+  HAL_GPIO_WritePin(enaPort_, enaPin_, enaRunHigh_ ? GPIO_PIN_RESET : GPIO_PIN_SET);
+  idleSince_ms_ = HAL_GetTick();
+  return true;
+}
+
+bool StepDirMotor::setDirection(bool forward)
+{
+  CriticalSection lock;
+  if (!ready_ || busy_)
+    return false;
+  HAL_GPIO_WritePin(dirPort_, dirPin_,
+      forward == forwardIsHigh_ ? GPIO_PIN_SET : GPIO_PIN_RESET);
+  forward_ = forward;
+  idleSince_ms_ = HAL_GetTick(); // Preserve DIR hold before a subsequent move.
   return true;
 }
 
@@ -139,7 +165,6 @@ void StepDirMotor::abort()
   CriticalSection lock;
   if (!ready_)
     return;
-  HAL_GPIO_WritePin(oePort_, oePin_, GPIO_PIN_RESET);
   TIM_TypeDef *tim = timer_->Instance;
   CLEAR_BIT(tim->CR1, TIM_CR1_CEN);
   tim->DIER = 0U;
@@ -149,6 +174,7 @@ void StepDirMotor::abort()
   MODIFY_REG(tim->CCMR1, TIM_CCMR1_OC1M, TIM_OCMODE_FORCED_INACTIVE);
   tim->CNT = 0U;
   tim->SR = 0U;
+  HAL_GPIO_WritePin(enaPort_, enaPin_, enaRunHigh_ ? GPIO_PIN_RESET : GPIO_PIN_SET);
   aborted_ = busy_;
   busy_ = armed_ = false;
   idleSince_ms_ = HAL_GetTick();
@@ -157,6 +183,7 @@ void StepDirMotor::abort()
 MotorSnapshot StepDirMotor::snapshot() const
 {
   CriticalSection lock;
-  return {ready_, armed_, busy_, aborted_, forward_,
+  const bool enaHigh = enaPort_ != nullptr && (enaPort_->ODR & enaPin_) != 0U;
+  return {ready_, armed_, busy_, aborted_, forward_, enaHigh, enaRunHigh_,
           requested_, completed_, frequency_hz_};
 }

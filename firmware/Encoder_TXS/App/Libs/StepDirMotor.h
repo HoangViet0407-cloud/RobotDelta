@@ -10,6 +10,8 @@ struct MotorSnapshot
   bool busy;
   bool aborted;
   bool forward;
+  bool enaCommandHigh; // GPIO output latch, NOT measured driver enable status.
+  bool enaRunHigh;     // Configured RUN level; STOP uses the opposite level.
   uint32_t requested;
   uint32_t completed; // Complete timer pulses, NOT encoder counts.
   uint32_t frequency_hz; // Nominal frequency; ISR rearm adds a small gap.
@@ -26,31 +28,34 @@ class StepDirMotor
 public:
   constexpr StepDirMotor(TIM_HandleTypeDef *timer,
       GPIO_TypeDef *dirPort, uint16_t dirPin,
-      GPIO_TypeDef *oePort, uint16_t oePin)
-    : timer_(timer), dirPort_(dirPort), oePort_(oePort),
-      dirPin_(dirPin), oePin_(oePin) {}
+      GPIO_TypeDef *enaPort, uint16_t enaPin)
+    : timer_(timer), dirPort_(dirPort), enaPort_(enaPort),
+      dirPin_(dirPin), enaPin_(enaPin) {}
 
   bool init(uint32_t counterClock_hz, uint32_t minFrequency_hz,
             uint32_t maxFrequency_hz, uint32_t maxPulses,
-            uint32_t armAndDirectionHold_ms, bool forwardIsHigh);
+            uint32_t armAndDirectionHold_ms, bool forwardIsHigh, bool enaRunHigh);
   bool arm();
+  bool setEnaRunHigh(bool high); // Only while DISARMED and idle; never emits STEP.
+  bool setDirection(bool forward); // Idle only; updates DIR without emitting STEP.
   bool move(uint32_t pulses, uint32_t frequency_hz, bool forward);
-  void abort(); // Immediately OE=0. May truncate the in-flight pulse.
+  void abort(); // Force STEP low, then ENA to STOP. May truncate one pulse.
   void onPeriodElapsedISR();
   MotorSnapshot snapshot() const;
 
 private:
   TIM_HandleTypeDef *timer_;
   GPIO_TypeDef *dirPort_;
-  GPIO_TypeDef *oePort_;
+  GPIO_TypeDef *enaPort_;
   uint16_t dirPin_;
-  uint16_t oePin_;
+  uint16_t enaPin_;
   uint32_t counterClock_hz_ = 0;
   uint32_t minFrequency_hz_ = 0;
   uint32_t maxFrequency_hz_ = 0;
   uint32_t maxPulses_ = 0;
   uint32_t hold_ms_ = 0;
   bool forwardIsHigh_ = true;
+  bool enaRunHigh_ = true;
   volatile bool ready_ = false;
   volatile bool armed_ = false;
   volatile bool busy_ = false;

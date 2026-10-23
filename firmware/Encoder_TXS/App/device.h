@@ -22,6 +22,7 @@ struct Device
   volatile uint32_t stopEpoch = 0; // Invalidate a previously received arm command.
   uint32_t commandEpoch = 0;
   uint32_t motorFrequency_hz = MOTOR_DEFAULT_HZ;
+  uint32_t motorPulseCount = MOTOR_DEFAULT_PULSES; // Next move; foreground only.
   bool movePendingReport = false;
   bool streamEnabled = true;
   uint32_t lastReport_ms = 0;
@@ -34,15 +35,18 @@ inline Device dev{}; // C++17: mot bien dung chung cho cac module.
 bool XX_initEncoder();
 void XX_serviceEncoder();
 void XX_initComm();
-bool XX_readCommand(uint8_t &command);
+bool XX_readCommand(uint8_t &command, uint32_t &argument);
 void XX_write(const char *text);
 void XX_printHelp();
 void XX_resetReportWindow();
 void XX_reportEncoder();
 bool XX_initMotor();
-void XX_moveMotor(bool forward);
+void XX_moveMotor();
+void XX_selectMotorDirection(bool forward);
+void XX_setMotorPulses(uint32_t pulses);
 void XX_serviceMotor();
 void XX_reportMotor();
+void XX_toggleEnaPolarity();
 void XX_stopMotorISR();
 void XX_serviceComm();
 
